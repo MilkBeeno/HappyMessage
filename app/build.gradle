@@ -1,0 +1,157 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk 32
+    defaultConfig {
+        // 正式包名: com.milk.simplehappymessage  测试包名:com.milk.happymessage
+        applicationId "com.milk.happymessage"
+        minSdk 21
+        targetSdk 32
+        versionCode 100
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 选择要添加的对应 cpu 类型的 .so 库:打包编译只会加重一个 arm64-v8a 的 so 库
+            abiFilters "arm64-v8a"
+        }
+    }
+    // 加载打包时的 JKS 认证
+    signingConfigs {
+        myJsk {
+            storeFile file("../app/jks/happy_message.jks")
+            storePassword 'happymessage123'
+            keyAlias 'chat'
+            keyPassword 'happymessage123'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 测试服的广告ID
+            buildConfigField 'String', 'AD_APP_ID', "${AD_APP_ID_DEBUG}"
+            buildConfigField 'String', 'AD_APP_VERSION', "${AD_APP_VERSION_DEBUG}"
+            buildConfigField 'String', 'AD_APP_CHANNEL', "${AD_APP_CHANNEL}"
+            buildConfigField 'String', 'TOP_ON_ID', "${TOP_ON_APP_ID_DEBUG}"
+            buildConfigField 'String', 'TOP_ON_KEY', "${TOP_ON_APP_KEY_DEBUG}"
+            signingConfig signingConfigs.myJsk
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 正试服的广告ID
+            buildConfigField 'String', 'AD_APP_ID', "${AD_APP_ID_RELEASE}"
+            buildConfigField 'String', 'AD_APP_VERSION', "${AD_APP_VERSION_RELEASE}"
+            buildConfigField 'String', 'AD_APP_CHANNEL', "${AD_APP_CHANNEL}"
+            buildConfigField 'String', 'TOP_ON_ID', "${TOP_ON_APP_ID_RELEASE}"
+            buildConfigField 'String', 'TOP_ON_KEY', "${TOP_ON_APP_KEY_RELEASE}"
+            signingConfig signingConfigs.myJsk
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    // 自定义组件库
+    implementation 'com.github.MilkBeeno:Library:1.2.8'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // 屏幕适配方案
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    // paging3 依赖库
+    implementation 'androidx.paging:paging-runtime:3.1.1'
+    // room 数据库
+    implementation 'androidx.room:room-runtime:2.4.2'
+    implementation 'androidx.room:room-paging:2.4.2'
+    implementation 'androidx.room:room-ktx:2.4.2'
+    annotationProcessor 'androidx.room:room-compiler:2.4.2'
+    kapt 'androidx.room:room-compiler:2.4.2'
+    // lottie 动画
+    implementation 'com.airbnb.android:lottie:5.2.0'
+    // facebook 登录
+    implementation 'com.facebook.android:facebook-android-sdk:14.0.0'
+    implementation 'com.facebook.android:facebook-login:14.0.0'
+    // swipeRefreshLayout 下拉刷新功能
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    // coil 网络图片加载框架
+    implementation 'io.coil-kt:coil:2.1.0'
+    implementation 'io.coil-kt:coil-gif:2.1.0'
+    implementation 'io.coil-kt:coil-video:2.1.0'
+    implementation 'io.coil-kt:coil-svg:2.1.0'
+    // liveEventBus 事件通知
+    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+    // retrofit 网络请求
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    // google 广告 ID 生成
+    // implementation 'androidx.ads:ads-identifier:1.0.0-alpha04'
+    // implementation 'com.google.guava:guava:28.0-android'
+    // image 高斯模糊库
+    implementation 'com.github.centerzx:ShapeBlurView:1.0.1'
+    // google firebase 统计功能
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    // google 登录功能
+    implementation('com.google.firebase:firebase-auth-ktx') {
+        exclude module: 'play-services-safetynet'
+    }
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    // 滑动指示器库
+    implementation 'me.relex:circleindicator:2.1.6'
+    // glide 图片加载
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+    // 图片选择库
+    implementation 'io.github.lucksiege:pictureselector:v3.10.5'
+    implementation 'io.github.lucksiege:ucrop:v3.10.4'
+    implementation 'io.github.lucksiege:compress:v3.10.4'
+    // 应用权限库
+    implementation 'com.guolindev.permissionx:permissionx:1.6.4'
+    // 视频播放库
+    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+    // Anythink (Necessary) 聚合广告- TopOn 平台依赖
+    implementation 'com.anythink.sdk:core:5.9.98'
+    implementation 'com.anythink.sdk:nativead:5.9.98'
+    implementation 'com.anythink.sdk:banner:5.9.98'
+    implementation 'com.anythink.sdk:interstitial:5.9.98'
+    implementation 'com.anythink.sdk:rewardedvideo:5.9.98'
+    implementation 'com.anythink.sdk:splash:5.9.98'
+    // Facebook 聚合广告- Facebook 广告依赖
+    // implementation 'com.anythink.sdk:adapter-facebook:5.9.96'
+    // implementation 'com.facebook.android:audience-network-sdk:6.11.0'
+    // implementation 'androidx.annotation:annotation:1.4.0'
+    // Admob 聚合广告- Admob 广告依赖
+    implementation 'com.anythink.sdk:adapter-admob:5.9.98'
+    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    // Google 订阅
+    implementation("com.android.billingclient:billing-ktx:5.0.0")
+}

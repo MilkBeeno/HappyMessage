@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.milk.funcall.common.ui.view.HeaderToolbar
+        android:id="@+id/headerToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="42dp" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.milk.funcall.common.ui.view.RefreshHeader
+            android:id="@+id/refreshHeader"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_horizontal" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp" />
+
+            <include
+                android:id="@+id/homeNothing"
+                layout="@layout/layout_list_nothing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </FrameLayout>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

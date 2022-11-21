@@ -1,0 +1,146 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Facebook 元素-->
+    <string name="facebook_app_name" translatable="false">@string/app_name</string>
+    <string name="facebook_app_id" translatable="false">1027636711262513</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1027636711262513</string>
+    <string name="facebook_client_token" translatable="false">7a3af85cead6c0115b4758ed184bdef0</string>
+    <!--App 内的翻译-->
+    <string name="app_name">Fun Call</string>
+    <string name="common_list_loading">Loading</string>
+    <string name="common_list_no_more_data">No more data</string>
+    <string name="common_list_load_more_error">failed to load more please try again later.</string>
+    <string name="common_refuse">You have denied access to albums and media.</string>
+    <string name="common_media_permission_title">Get photo and media permissions</string>
+    <string name="common_ok">OK</string>
+    <string name="common_confirm">CONFIRM</string>
+    <string name="common_cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="common_loading">Loading…</string>
+    <string name="common_uploading">Uploading…</string>
+    <string name="common_video">Video</string>
+    <string name="common_picture">Photos</string>
+    <string name="common_success">Success</string>
+    <string name="common_successful">Successful</string>
+    <string name="common_place_to_login_first">Please log in to operate.</string>
+    <string name="common_follow">Follow</string>
+    <string name="common_un_follow">UnFollow</string>
+    <string name="common_up_top">Put on top</string>
+    <string name="common_un_pin">Up pin</string>
+    <string name="common_black">Pull black</string>
+    <string name="common_report">Report</string>
+    <string name="common_report_successful">Report successful,thanks for your report.</string>
+    <!--启动页面翻译-->
+    <string name="launch_bottom_tips"><![CDATA[Messaging & Chat App]]></string>
+    <!--选择性别页面翻译-->
+    <string name="gender_title">Choose your gender</string>
+    <string name="gender_desc">Help us find the right friend for you</string>
+    <string name="gender_greeting">I am a</string>
+    <string name="gender_man">BOY</string>
+    <string name="gender_woman">GIRL</string>
+    <string name="gender_next">NEXT</string>
+    <string name="gender_next_desc">* Selected to leave, cannot be changed ~</string>
+    <!--登录页面翻译-->
+    <string name="login_google">Google</string>
+    <string name="login_facebook">Facebook</string>
+    <string name="login_device">Direct Use</string>
+    <string name="login_privacy_desc">Agree to \" User  Agreement \" and  \" Privacy  Policy \"</string>
+    <string name="login_user_agreement">User  Agreement</string>
+    <string name="login_user_privacy">Privacy  Policy</string>
+    <string name="login_check_privacy">Please confirm the privacy agreement first!</string>
+    <string name="login_obtain_device_failed">Login failed, unable to get Google Admob ID</string>
+    <string name="login_google_auth_failed">Google auth failure,please try again.</string>
+    <string name="login_facebook_auth_failed">Facebook auth failure,please try again.</string>
+    <string name="login_max_client">Register with another phone</string>
+    <!--创建名字页面翻译-->
+    <string name="preset_profile_title">Basic Information</string>
+    <string name="preset_profile_tag">Name</string>
+    <string name="preset_profile_name_hint">Enter your name </string>
+    <string name="preset_profile_confirm">Start</string>
+    <string name="preset_profile_name_empty">User name empty is not allowed.</string>
+    <string name="preset_profile_picture_upload_failed">Image upload failed.</string>
+    <string name="preset_profile_profile_update_failed">Name or picture update failed.</string>
+    <!--主页面翻译-->
+    <string name="main_nav_message">Message</string>
+    <string name="main_nav_home">Home</string>
+    <string name="main_nav_mine">Mine</string>
+    <!--Home页面翻译-->
+    <string name="home_online">Online</string>
+    <string name="home_offline">Offline</string>
+    <string name="home_title">Discover</string>
+    <string name="home_list_nothing">No Date Please try again later</string>
+    <string name="home_list_refresh_failed">Refreshed Failed</string>
+    <!--Mine页面翻译-->
+    <string name="mine_default_user_name">User\'s Nickname</string>
+    <string name="mine_follows">Follows</string>
+    <string name="mine_fans">Fans</string>
+    <string name="mine_edit_profile">Edit profile</string>
+    <string name="mine_recharge">Cancel Ads</string>
+    <string name="mine_sign_out">Sign out</string>
+    <string name="mine_about_us">About us</string>
+    <string name="mine_blacked_list">Blacked list</string>
+    <string name="mine_login">Log In</string>
+    <string name="mine_log_out_title">Are you sure you want to log out?</string>
+    <string name="mine_log_out_confirm">Sign Out</string>
+    <string name="mine_log_out_cancel">Cancel</string>
+    <!--关于我们页面翻译-->
+    <string name="about_us_user_agreement">User Agreement</string>
+    <string name="about_us_user_privacy">Privacy policy</string>
+    <!--聊天页面翻译-->
+    <string name="chat_message_title">Message</string>
+    <string name="chat_message_list_empty">No Message</string>
+    <string name="chat_message_send">Send</string>
+    <string name="chat_message_hint">Please enter a message</string>
+    <string name="chat_message_say_hi_title">Hi~</string>
+    <string name="chat_message_say_hi_desc">Send hello and make friends</string>
+    <string name="chat_message_delete">Delete</string>
+    <string name="chat_message_list_with_other">Chat with other</string>
+    <!--更改个人资料页面翻译-->
+    <string name="edit_profile_title">Edit profile</string>
+    <string name="edit_profile_avatar">Update your real avatar</string>
+    <string name="edit_profile_save">Save</string>
+    <string name="edit_profile_name">Name</string>
+    <string name="edit_profile_about_me">About me</string>
+    <string name="edit_profile_about_link">Contact information</string>
+    <string name="edit_profile_name_hint">Please enter your name</string>
+    <string name="edit_profile_about_me_hint">Please introduce yourself</string>
+    <string name="edit_profile_delete_image_title">Whether to delete the content</string>
+    <string name="edit_profile_delete_image_confirm">confirm deletion</string>
+    <string name="edit_profile_link_hint">Please enter your third-party social platform link</string>
+    <string name="edit_profile_name_not_blank">Name cannot be empty,please modify to correct form.</string>
+    <string name="edit_profile_success">Profile update successful.</string>
+    <!--个人粉丝页面翻译-->
+    <string name="fans_list_empty">No fans yet</string>
+    <string name="fans_list_to_publish">to publish content</string>
+    <!--个人关注页面翻译-->
+    <string name="follows_list_empty">Users who have not yet followed</string>
+    <string name="follows_list_to_attention">to pay attention</string>
+    <!--用户信息展示页面翻译-->
+    <string name="user_info_message">Message</string>
+    <string name="user_info_copy">Copy</string>
+    <string name="user_info_not_bio">No profile yet ~</string>
+    <string name="user_info_not_link">Social platform homepage link has not been uploaded yet ~</string>
+    <string name="user_info_obtain_failed">Failed to get user information.</string>
+    <string name="user_info_unlock_times">Free Times</string>
+    <string name="user_info_contact_details">How to contact me :</string>
+    <string name="user_info_copy_success">Contact details copy successful.</string>
+    <string name="user_info_media_locked">Information is locked</string>
+    <string name="user_info_media_locked_view">View Now</string>
+    <string name="user_info_please_view_video_or_image">Please watch the picture first.</string>
+    <string name="user_info_view_ad">Rewarded video coming soon</string>
+    <!--充值页面翻译-->
+    <string name="recharge_title">subscription</string>
+    <string name="recharge_week">1 Week</string>
+    <string name="recharge_year">1 Year</string>
+    <string name="recharge_week_desc">Cancel at any time</string>
+    <string name="recharge_year_desc">Free to try, cancel at any time</string>
+    <!--打开系统通知翻译-->
+    <string name="turn_on_notification_title">Turn on notification function</string>
+    <string name="turn_on_notification_content">Make sure you receive new messages</string>
+    <string name="turn_on_notification_desc">Please turn on the notification function</string>
+    <string name="dialog_recharge_subscribed">You have also successfully subscribed to</string>
+    <string name="recharge_discount_number">% OFF</string>
+    <string name="dialog_report_title">Block and Report</string>
+    <string name="dialog_report_desc">What\'s the problem ?</string>
+    <string name="dialog_report_options_first">Harassment</string>
+    <string name="dialog_report_options_second">False Gender</string>
+    <string name="dialog_report_options_third">Nudity</string>
+</resources>
