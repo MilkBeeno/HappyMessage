@@ -18,10 +18,8 @@ import com.milk.happymessage.common.ui.AbstractActivity
 import com.milk.happymessage.databinding.ActivityLaunchBinding
 import com.milk.happymessage.login.ui.vm.LaunchViewModel
 import com.milk.happymessage.user.ui.act.UserInfoActivity
-import com.milk.simple.ktx.gone
 import com.milk.simple.ktx.immersiveStatusBar
 import com.milk.simple.ktx.navigationBarPadding
-import com.milk.simple.ktx.visible
 import com.milk.simple.mdr.KvManger
 
 class LaunchActivity : AbstractActivity() {
@@ -48,17 +46,17 @@ class LaunchActivity : AbstractActivity() {
     private fun initializeView() {
         immersiveStatusBar()
         binding.root.navigationBarPadding()
-        binding.firstLottieView.setAnimation("launch_first.json")
-        binding.firstLottieView.playAnimation()
-        binding.firstLottieView.addAnimatorListener(object : Animator.AnimatorListener {
+        binding.lottieView.setAnimation("launch.json")
+        binding.lottieView.playAnimation()
+        binding.lottieView.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationCancel(p0: Animator?) = Unit
             override fun onAnimationRepeat(p0: Animator?) = Unit
             override fun onAnimationStart(p0: Animator?) {
-                binding.firstLottieView.visible()
+
             }
 
             override fun onAnimationEnd(p0: Animator?) {
-                showNextAnimation()
+
             }
         })
     }
@@ -90,7 +88,8 @@ class LaunchActivity : AbstractActivity() {
     }
 
     private fun checkIsNewClient() {
-        val isNewClient = KvManger.getBoolean(KvKey.CHECK_IS_NEW_CLIENT, true)
+        val isNewClient =
+            KvManger.getBoolean(KvKey.CHECK_IS_NEW_CLIENT, true)
         if (isNewClient) {
             KvManger.put(KvKey.CHECK_IS_NEW_CLIENT, false)
             FireBaseManager.logEvent(FirebaseKey.FIRST_OPEN)
@@ -98,24 +97,18 @@ class LaunchActivity : AbstractActivity() {
     }
 
     private fun toMainOrGenderPage() {
+        if (Account.userLogged || Account.userGender.isNotBlank()) {
+            MainActivity.create(this)
+        } else {
+            GenderActivity.create(this)
+        }
         finish()
-        if (Account.userLogged || Account.userGender.isNotBlank()) MainActivity.create(this)
-        else GenderActivity.create(this)
-    }
-
-    private fun showNextAnimation() {
-        binding.ivFunCall.visible()
-        binding.firstLottieView.gone()
-        binding.secondLottieView.visible()
-        binding.secondLottieView.setAnimation("launch_second.json")
-        binding.secondLottieView.playAnimation()
     }
 
     override fun onInterceptKeyDownEvent(): Boolean = true
 
     override fun onDestroy() {
         super.onDestroy()
-        binding.firstLottieView.clearAnimation()
-        binding.secondLottieView.clearAnimation()
+        binding.lottieView.clearAnimation()
     }
 }

@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/common_app_background"
+    android:background="@drawable/shape_app_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".login.ui.act.LaunchActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/firstLottieView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:lottie_autoPlay="true" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/secondLottieView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:lottie_autoPlay="true" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivFunCall"
-        android:layout_width="169dp"
-        android:layout_height="24dp"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="132dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/common_fun_call"
-        android:visibility="gone" />
+        android:layout_marginTop="114dp"
+        android:includeFontPadding="false"
+        android:text="@string/app_name"
+        android:textColor="@color/FF171C21"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_weight="1"
+        app:lottie_autoPlay="true" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="49dp"
+        android:layout_marginBottom="75dp"
         android:text="@string/launch_bottom_tips"
-        android:textColor="@color/FF000000"
+        android:textColor="@color/FF242B33"
         android:textSize="13sp" />
-</FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

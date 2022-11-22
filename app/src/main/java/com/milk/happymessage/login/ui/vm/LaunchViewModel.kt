@@ -35,9 +35,11 @@ class LaunchViewModel : ViewModel() {
     internal fun loadLaunchAd(activity: FragmentActivity, finished: () -> Unit) {
         var interstitial: ATInterstitial? = null
         MilkTimer.Builder()
-            .setMillisInFuture(13000)
+            .setMillisInFuture(10000)
             .setOnTickListener { t, it ->
-                if (it <= 10000 && adLoadStatus == AdLoadType.Success) t.finish()
+                if (it <= 7000 && adLoadStatus == AdLoadType.Success) {
+                    t.finish()
+                }
             }
             .setOnFinishedListener {
                 if (adLoadStatus == AdLoadType.Success) {
