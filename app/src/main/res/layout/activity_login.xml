@@ -3,51 +3,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/common_app_background"
+    android:background="@drawable/shape_app_background"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".login.ui.act.LoginActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        android:layout_gravity="start"
+        android:paddingStart="12dp"
+        android:paddingTop="11dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="11dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_back_arrow" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/app_name"
+        android:textColor="@color/FF171C21"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="81dp"
         android:layout_height="81dp"
-        android:layout_marginTop="153dp"
+        android:layout_marginTop="43dp"
         android:scaleType="centerCrop"
         android:src="@drawable/login_logo" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivFunCall"
-        android:layout_width="106dp"
-        android:layout_height="15dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="19dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/common_fun_call" />
+    <androidx.legacy.widget.Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llGoogle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginEnd="38dp"
-        android:background="@drawable/shape_login_button_background"
-        android:gravity="center">
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/shape_common_button_style_3"
+        android:gravity="center_vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="14dp"
             android:scaleType="centerCrop"
             android:src="@drawable/login_google" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:text="@string/login_google"
-            android:textColor="@color/FF8E58FB"
+            android:textColor="@color/FF171C21"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="14dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_enter_arrow" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -55,52 +84,78 @@
         android:id="@+id/llFacebook"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="29dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="38dp"
-        android:background="@drawable/shape_login_button_background"
-        android:gravity="center">
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/shape_common_button_style_3"
+        android:gravity="center_vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="14dp"
             android:scaleType="centerCrop"
             android:src="@drawable/login_facebook" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:text="@string/login_facebook"
-            android:textColor="@color/FF8E58FB"
+            android:textColor="@color/FF171C21"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="14dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_enter_arrow" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llDevice"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="29dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="38dp"
-        android:background="@drawable/shape_login_button_background"
-        android:gravity="center">
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/shape_common_button_style_3"
+        android:gravity="center_vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="14dp"
             android:scaleType="centerCrop"
             android:src="@drawable/login_tourist" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:text="@string/login_device"
-            android:textColor="@color/FF8E58FB"
+            android:textColor="@color/FF171C21"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="14dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_enter_arrow" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.legacy.widget.Space
@@ -111,7 +166,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="72dp"
         android:gravity="center_vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -126,11 +181,11 @@
             android:id="@+id/tvPrivacy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginEnd="22dp"
             android:includeFontPadding="false"
             android:textColor="@color/FF898C99"
             android:textSize="12sp"
             tools:text="Agree to  User  Agreement  and  Privacy  Policy" />
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </androidx.appcompat.widget.LinearLayoutCompat>

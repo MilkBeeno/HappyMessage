@@ -48,7 +48,9 @@ class LoginActivity : AbstractActivity() {
     private fun initializeView() {
         FireBaseManager.logEvent(FirebaseKey.OPEN_LOGINS_PAGE)
         immersiveStatusBar()
+        binding.ivClose.statusBarPadding()
         binding.root.navigationBarPadding()
+        binding.ivClose.setOnClickListener(this)
         binding.llGoogle.setOnClickListener(this)
         binding.llFacebook.setOnClickListener(this)
         binding.llDevice.setOnClickListener(this)
@@ -111,6 +113,7 @@ class LoginActivity : AbstractActivity() {
     override fun onMultipleClick(view: View) {
         super.onMultipleClick(view)
         when (view) {
+            binding.ivClose -> finish()
             binding.llGoogle -> checkIsAllowedToLoginAuth {
                 FireBaseManager.logEvent(FirebaseKey.LOGINS_WITH_GOOGLE)
                 if (isNotAuthorizing) {

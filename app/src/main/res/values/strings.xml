@@ -1,17 +1,36 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- App Name Translation-->
     <string name="app_name">Happy Message</string>
-    <!--启动页面翻译-->
-    <string name="launch_bottom_tips"><![CDATA[Messaging & Chat App]]></string>
-    <!--性别选择页面翻译-->
-    <string name="gender_select_man">I am a boy</string>
-    <string name="gender_select_woman">I am a girl</string>
-
     <!--Facebook 元素-->
     <string name="facebook_app_name" translatable="false">@string/app_name</string>
     <string name="facebook_app_id" translatable="false">1027636711262513</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb1027636711262513</string>
     <string name="facebook_client_token" translatable="false">7a3af85cead6c0115b4758ed184bdef0</string>
+    <!--启动页面翻译-->
+    <string name="launch_bottom_tips"><![CDATA[Messaging & Chat App]]></string>
+    <!--性别选择页面翻译-->
+    <string name="gender_select_man">I am a boy</string>
+    <string name="gender_select_woman">I am a girl</string>
+    <string name="gender_title">Choose your gender</string>
+    <string name="gender_desc">Help us find the right friend for you</string>
+    <string name="gender_next">NEXT</string>
+    <string name="gender_next_desc">* Selected to leave, cannot be changed ~</string>
+    <!--登录页面翻译-->
+    <string name="login_google">Google</string>
+    <string name="login_facebook">Facebook</string>
+    <string name="login_device">Direct Use</string>
+    <string name="login_privacy_desc">Agree to \" User  Agreement \" and  \" Privacy  Policy \"</string>
+    <string name="login_user_agreement">User  Agreement</string>
+    <string name="login_user_privacy">Privacy  Policy</string>
+    <string name="login_check_privacy">Please confirm the privacy agreement first!</string>
+    <string name="login_obtain_device_failed">Login failed, unable to get Google Admob ID</string>
+    <string name="login_google_auth_failed">Google auth failure,please try again.</string>
+    <string name="login_facebook_auth_failed">Facebook auth failure,please try again.</string>
+    <string name="login_max_client_title">Can\'t register</string>
+    <string name="login_max_client_content">Register with another phone</string>
+
+
+
     <!--App 内的翻译-->
     <string name="common_list_loading">Loading</string>
     <string name="common_list_no_more_data">No more data</string>
@@ -36,23 +55,7 @@
     <string name="common_report">Report</string>
     <string name="common_report_successful">Report successful,thanks for your report.</string>
 
-    <!--选择性别页面翻译-->
-    <string name="gender_title">Choose your gender</string>
-    <string name="gender_desc">Help us find the right friend for you</string>
-    <string name="gender_next">NEXT</string>
-    <string name="gender_next_desc">* Selected to leave, cannot be changed ~</string>
-    <!--登录页面翻译-->
-    <string name="login_google">Google</string>
-    <string name="login_facebook">Facebook</string>
-    <string name="login_device">Direct Use</string>
-    <string name="login_privacy_desc">Agree to \" User  Agreement \" and  \" Privacy  Policy \"</string>
-    <string name="login_user_agreement">User  Agreement</string>
-    <string name="login_user_privacy">Privacy  Policy</string>
-    <string name="login_check_privacy">Please confirm the privacy agreement first!</string>
-    <string name="login_obtain_device_failed">Login failed, unable to get Google Admob ID</string>
-    <string name="login_google_auth_failed">Google auth failure,please try again.</string>
-    <string name="login_facebook_auth_failed">Facebook auth failure,please try again.</string>
-    <string name="login_max_client">Register with another phone</string>
+
     <!--创建名字页面翻译-->
     <string name="preset_profile_title">Basic Information</string>
     <string name="preset_profile_tag">Name</string>

@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/shape_login_button_background"
+                android:background="@drawable/shape_dialog_button_background"
                 android:gravity="center"
                 android:text="@string/common_cancel"
                 android:textColor="@color/FF8E58FB"
