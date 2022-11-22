@@ -22,7 +22,7 @@
             app:shapeAppearanceOverlay="@style/circleStyle"
             tools:src="@drawable/common_default_man" />
 
-        <com.milk.funcall.common.ui.view.GenderImageView
+        <com.milk.happymessage.common.ui.view.GenderImageView
             android:id="@+id/ivUserGender"
             android:layout_width="19dp"
             android:layout_height="19dp"

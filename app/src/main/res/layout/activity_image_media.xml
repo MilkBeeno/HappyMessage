@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="42dp">
 
-        <com.milk.funcall.common.ui.view.HeaderToolbar
+        <com.milk.happymessage.common.ui.view.HeaderToolbar
             android:id="@+id/headerToolbar"
             android:layout_width="match_parent"
             android:layout_height="42dp" />

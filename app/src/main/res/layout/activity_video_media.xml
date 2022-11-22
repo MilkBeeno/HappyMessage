@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="42dp">
 
-        <com.milk.funcall.common.ui.view.HeaderToolbar
+        <com.milk.happymessage.common.ui.view.HeaderToolbar
             android:id="@+id/headerToolbar"
             android:layout_width="match_parent"
             android:layout_height="42dp" />
@@ -38,7 +38,7 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <com.milk.funcall.common.media.view.IjkVideoView
+        <com.milk.happymessage.common.media.view.IjkVideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

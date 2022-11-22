@@ -30,7 +30,7 @@
                 android:src="@drawable/common_default_man"
                 app:shapeAppearanceOverlay="@style/circleStyle" />
 
-            <com.milk.funcall.common.ui.view.GenderImageView
+            <com.milk.happymessage.common.ui.view.GenderImageView
                 android:id="@+id/ivUserGender"
                 android:layout_width="19dp"
                 android:layout_height="19dp"
@@ -123,24 +123,24 @@
             android:background="@drawable/shape_mine_background"
             android:orientation="vertical">
 
-            <com.milk.funcall.account.ui.view.MineOptions
+            <com.milk.happymessage.account.ui.view.MineOptions
                 android:id="@+id/editProfile"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
                 android:layout_marginTop="10dp" />
 
-            <com.milk.funcall.account.ui.view.MineOptions
+            <com.milk.happymessage.account.ui.view.MineOptions
                 android:id="@+id/recharge"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
                 android:layout_marginTop="10dp" />
 
-            <com.milk.funcall.account.ui.view.MineOptions
+            <com.milk.happymessage.account.ui.view.MineOptions
                 android:id="@+id/blackedList"
                 android:layout_width="match_parent"
                 android:layout_height="53dp" />
 
-            <com.milk.funcall.account.ui.view.MineOptions
+            <com.milk.happymessage.account.ui.view.MineOptions
                 android:id="@+id/aboutUs"
                 android:layout_width="match_parent"
                 android:layout_height="53dp" />
@@ -150,7 +150,7 @@
                 android:layout_height="10dp"
                 android:background="@color/FFF2F2F2" />
 
-            <com.milk.funcall.account.ui.view.MineOptions
+            <com.milk.happymessage.account.ui.view.MineOptions
                 android:id="@+id/signOut"
                 android:layout_width="match_parent"
                 android:layout_height="53dp" />

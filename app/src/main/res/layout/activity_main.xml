@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.milk.funcall.app.ui.view.BottomNavigation
+    <com.milk.happymessage.app.ui.view.BottomNavigation
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="50dp" />

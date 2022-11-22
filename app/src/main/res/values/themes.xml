@@ -1,10 +1,10 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.FunCall" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.HappyMessage" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="Theme.FunCall.AdActivity" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.HappyMessage.AdActivity" parent="android:Theme.Material.Light.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:statusBarColor">@color/black_50</item>

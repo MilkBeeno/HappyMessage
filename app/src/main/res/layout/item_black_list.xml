@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.milk.funcall.common.ui.view.GenderImageView
+    <com.milk.happymessage.common.ui.view.GenderImageView
         android:id="@+id/ivUserGender"
         android:layout_width="19dp"
         android:layout_height="19dp"

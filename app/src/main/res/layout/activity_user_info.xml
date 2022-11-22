@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.milk.funcall.common.ui.view.HeaderToolbar
+                <com.milk.happymessage.common.ui.view.HeaderToolbar
                     android:id="@+id/headerToolbar"
                     android:layout_width="match_parent"
                     android:layout_height="42dp"
@@ -167,7 +167,7 @@
                         android:visibility="gone"
                         tools:visibility="visible" />
 
-                    <com.milk.funcall.user.ui.view.MediaLockedLayout
+                    <com.milk.happymessage.user.ui.view.MediaLockedLayout
                         android:id="@+id/mlImage"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

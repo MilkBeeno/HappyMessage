@@ -65,7 +65,7 @@
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="11:30" />
 
-    <com.milk.funcall.chat.ui.view.MessageRedDotView
+    <com.milk.happymessage.chat.ui.view.MessageRedDotView
         android:id="@+id/redDotRootView"
         android:layout_width="15dp"
         android:layout_height="15dp"

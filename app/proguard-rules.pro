@@ -221,31 +221,31 @@
 -keep class retrofit2.** { *; }
 
 # Java Bean类处理
--keep public class com.milk.funcall.account.data.** {
+-keep public class com.milk.happymessage.account.data.** {
     public void set*(***);
     public *** get*();
 }
--keep public class com.milk.funcall.ad.data.** {
+-keep public class com.milk.happymessage.ad.data.** {
     public void set*(***);
     public *** get*();
 }
--keep public class com.milk.funcall.ad.data.body.** {
+-keep public class com.milk.happymessage.ad.data.body.** {
     public void set*(***);
     public *** get*();
 }
--keep public class com.milk.funcall.chat.data.** {
+-keep public class com.milk.happymessage.chat.data.** {
     public void set*(***);
     public *** get*();
 }
--keep public class com.milk.funcall.common.response.** {
+-keep public class com.milk.happymessage.common.response.** {
     public void set*(***);
     public *** get*();
 }
--keep public class com.milk.funcall.login.data.** {
+-keep public class com.milk.happymessage.login.data.** {
     public void set*(***);
     public *** get*();
 }
--keep public class com.milk.funcall.user.data.** {
+-keep public class com.milk.happymessage.user.data.** {
     public void set*(***);
     public *** get*();
 }

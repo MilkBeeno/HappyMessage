@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.milk.funcall.common.ui.view.HeaderToolbar
+    <com.milk.happymessage.common.ui.view.HeaderToolbar
         android:id="@+id/headerToolbar"
         android:layout_width="match_parent"
         android:layout_height="42dp" />
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.milk.funcall.common.ui.view.RefreshHeader
+        <com.milk.happymessage.common.ui.view.RefreshHeader
             android:id="@+id/refreshHeader"
             android:layout_width="match_parent"
             android:layout_height="56dp"
