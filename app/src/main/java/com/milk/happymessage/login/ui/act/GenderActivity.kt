@@ -2,6 +2,7 @@ package com.milk.happymessage.login.ui.act
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -10,14 +11,12 @@ import com.milk.happymessage.R
 import com.milk.happymessage.account.Account
 import com.milk.happymessage.app.ui.act.MainActivity
 import com.milk.happymessage.common.constrant.EventKey
+import com.milk.happymessage.common.constrant.FirebaseKey
+import com.milk.happymessage.common.firebase.FireBaseManager
 import com.milk.happymessage.common.ui.AbstractActivity
 import com.milk.happymessage.databinding.ActivityGenderBinding
-import com.milk.happymessage.common.firebase.FireBaseManager
-import com.milk.happymessage.common.constrant.FirebaseKey
 import com.milk.happymessage.user.status.Gender
-import com.milk.simple.ktx.color
-import com.milk.simple.ktx.immersiveStatusBar
-import com.milk.simple.ktx.navigationBarPadding
+import com.milk.simple.ktx.*
 
 class GenderActivity : AbstractActivity() {
     private val binding by lazy { ActivityGenderBinding.inflate(layoutInflater) }
@@ -70,41 +69,51 @@ class GenderActivity : AbstractActivity() {
     }
 
     private fun updateManStatus(select: Boolean) {
-        binding.clMan.setBackgroundResource(
-            if (select)
-                R.drawable.shape_gender_man_select_background
-            else
-                R.drawable.shape_gender_select_background
-        )
-        binding.tvManFirst.setTextColor(
-            if (select) color(R.color.white) else color(R.color.FF1E1E21)
-        )
-        binding.tvManSecond.setTextColor(
-            if (select) color(R.color.white) else color(R.color.FF8E58FB)
-        )
-        binding.tvManSecond.textSize = if (select) 29f else 14f
-        val params = binding.tvManSecond.layoutParams as ConstraintLayout.LayoutParams
-        params.bottomMargin = if (select) 8 else 0
-        binding.tvManSecond.layoutParams = params
+        if (select) {
+            binding.clMan.setBackgroundResource(R.drawable.shape_gender_select_man_background)
+            binding.ivMan.setImageResource(R.drawable.gender_man_select)
+            binding.ivManSelected.visible()
+            binding.tvMan.setTextColor(color(R.color.white))
+            binding.tvMan.typeface = Typeface.DEFAULT_BOLD
+            binding.tvMan.textSize = 17f
+            val params = binding.tvMan.layoutParams as ConstraintLayout.LayoutParams
+            params.setMargins(-dp2px(12f).toInt(), 0, 0, 0)
+            binding.tvMan.layoutParams = params
+        } else {
+            binding.clMan.setBackgroundResource(R.drawable.shape_gender_select_background)
+            binding.ivMan.setImageResource(R.drawable.gender_man)
+            binding.ivManSelected.gone()
+            binding.tvMan.setTextColor(color(R.color.black))
+            binding.tvMan.typeface = Typeface.DEFAULT
+            binding.tvMan.textSize = 14f
+            val params = binding.tvMan.layoutParams as ConstraintLayout.LayoutParams
+            params.setMargins(dp2px(2f).toInt(), 0, 0, 0)
+            binding.tvMan.layoutParams = params
+        }
     }
 
     private fun updateWomanStatus(select: Boolean) {
-        binding.clWoman.setBackgroundResource(
-            if (select)
-                R.drawable.shape_gender_woman_select_background
-            else
-                R.drawable.shape_gender_select_background
-        )
-        binding.tvWomanFirst.setTextColor(
-            if (select) color(R.color.white) else color(R.color.FF1E1E21)
-        )
-        binding.tvWomanSecond.setTextColor(
-            if (select) color(R.color.white) else color(R.color.FFFA64C8)
-        )
-        binding.tvWomanSecond.textSize = if (select) 29f else 14f
-        val params = binding.tvWomanSecond.layoutParams as ConstraintLayout.LayoutParams
-        params.bottomMargin = if (select) 8 else 0
-        binding.tvWomanSecond.layoutParams = params
+        if (select) {
+            binding.clWoman.setBackgroundResource(R.drawable.shape_gender_select_woman_background)
+            binding.ivWoman.setImageResource(R.drawable.gender_woman_select)
+            binding.ivWomanSelected.visible()
+            binding.tvWoman.setTextColor(color(R.color.white))
+            binding.tvWoman.typeface = Typeface.DEFAULT_BOLD
+            binding.tvWoman.textSize = 17f
+            val params = binding.tvWoman.layoutParams as ConstraintLayout.LayoutParams
+            params.setMargins(0, 0, -dp2px(12f).toInt(), 0)
+            binding.tvWoman.layoutParams = params
+        } else {
+            binding.clWoman.setBackgroundResource(R.drawable.shape_gender_select_background)
+            binding.ivWoman.setImageResource(R.drawable.gender_woman)
+            binding.ivWomanSelected.gone()
+            binding.tvWoman.setTextColor(color(R.color.black))
+            binding.tvWoman.typeface = Typeface.DEFAULT
+            binding.tvWoman.textSize = 14f
+            val params = binding.tvWoman.layoutParams as ConstraintLayout.LayoutParams
+            params.setMargins(0, 0, 0, dp2px(4f).toInt())
+            binding.tvWoman.layoutParams = params
+        }
     }
 
     override fun onInterceptKeyDownEvent() = true

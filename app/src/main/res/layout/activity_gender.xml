@@ -4,127 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/common_app_background"
+    android:background="@drawable/shape_app_background"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingStart="19dp"
-    android:paddingEnd="19dp"
     tools:context=".login.ui.act.GenderActivity">
+
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
         android:text="@string/gender_title"
-        android:textColor="@color/FF1E1E21"
-        android:textSize="24sp"
+        android:textColor="@color/FF171C21"
+        android:textSize="29sp"
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="19dp"
         android:text="@string/gender_desc"
-        android:textColor="@color/FF5B5D66"
+        android:textColor="@color/FF242B33"
         android:textSize="14sp" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMan"
+        android:layout_width="245dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/shape_gender_select_background">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clMan"
-            android:layout_width="152dp"
-            android:layout_height="202dp"
-            android:background="@drawable/shape_gender_man_select_background">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivManSelected"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gender_select_background"
+            android:visibility="gone" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivMan"
-                android:layout_width="115dp"
-                android:layout_height="91dp"
-                android:layout_marginStart="21dp"
-                android:layout_marginTop="31dp"
-                android:src="@drawable/gender_man"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMan"
+            android:layout_width="138dp"
+            android:layout_height="127dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/gender_man"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvManFirst"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="31dp"
-                android:text="@string/gender_greeting"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/tvManSecond"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivMan" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvManSecond"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/gender_man"
-                android:textColor="@color/white"
-                android:textSize="29sp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvManFirst"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvManFirst"
-                app:layout_constraintTop_toTopOf="@+id/tvManFirst" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.legacy.widget.Space
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMan"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginTop="31dp"
+            android:text="@string/gender_select_man"
+            android:textColor="@color/FF000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMan"
+            app:layout_constraintStart_toStartOf="@+id/ivMan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clWoman"
-            android:layout_width="152dp"
-            android:layout_height="202dp"
-            android:background="@drawable/shape_gender_select_background">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clWoman"
+        android:layout_width="245dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/shape_gender_select_background">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivWoman"
-                android:layout_width="115dp"
-                android:layout_height="89dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="32dp"
-                android:src="@drawable/gender_woman"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWomanSelected"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gender_select_background"
+            android:visibility="gone" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvWomanFirst"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="27dp"
-                android:text="@string/gender_greeting"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@+id/tvWomanSecond"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivWoman" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWoman"
+            android:layout_width="138dp"
+            android:layout_height="127dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/gender_woman"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvWomanSecond"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:text="@string/gender_woman"
-                android:textColor="@color/FFFA64C8"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/tvWomanFirst"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvWomanFirst"
-                app:layout_constraintTop_toTopOf="@+id/tvWomanFirst" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:text="@string/gender_select_woman"
+            android:textColor="@color/FF000000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivWoman"
+            app:layout_constraintEnd_toEndOf="@+id/ivWoman" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.legacy.widget.Space
         android:layout_width="match_parent"
@@ -135,7 +113,9 @@
         android:id="@+id/tvGenderNext"
         android:layout_width="match_parent"
         android:layout_height="43dp"
-        android:background="@drawable/shape_common_next_background"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/shape_common_button_style_1"
         android:gravity="center"
         android:text="@string/gender_next"
         android:textColor="@color/white"
