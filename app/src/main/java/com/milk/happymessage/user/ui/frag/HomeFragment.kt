@@ -78,7 +78,7 @@ class HomeFragment : AbstractFragment() {
     }
 
     override fun initializeView() {
-        binding.headerToolbar.setTitle(R.string.home_title)
+        binding.headerToolbar.text = requireActivity().string(R.string.home_title)
         binding.rvHome.itemAnimator = null
         binding.rvHome.layoutManager =
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
