@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:padding="0.25dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/common_default_man"
+                android:src="@drawable/common_default_avatar_man"
                 app:shapeAppearanceOverlay="@style/circleStyle"
                 app:strokeColor="@color/white"
                 app:strokeWidth="0.5dp" />

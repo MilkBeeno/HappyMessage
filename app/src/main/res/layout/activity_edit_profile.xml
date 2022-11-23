@@ -37,7 +37,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/circleStyle"
-                    tools:src="@drawable/common_default_man" />
+                    tools:src="@drawable/common_default_avatar_man" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="match_parent"

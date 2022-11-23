@@ -59,7 +59,7 @@ class FCMMessagingService : FirebaseMessagingService() {
         ioScope {
             var bitmap = BitmapUtil.obtain(imageUrl)
             if (bitmap == null) {
-                bitmap = context.getDrawable(R.drawable.common_default_woman)?.toBitmap()
+                bitmap = context.getDrawable(R.drawable.common_default_avatar_woman)?.toBitmap()
             }
             if (bitmap != null) {
                 NotificationUtil.show(context, userId, messageTitle, messageBody, bitmap)

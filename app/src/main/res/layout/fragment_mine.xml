@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/common_default_man"
+                android:src="@drawable/common_default_avatar_man"
                 app:shapeAppearanceOverlay="@style/circleStyle" />
 
             <com.milk.happymessage.common.ui.view.GenderImageView

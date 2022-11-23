@@ -17,6 +17,8 @@ import com.luck.picture.lib.language.LanguageConfig
 import com.milk.happymessage.R
 import com.milk.happymessage.account.Account
 import com.milk.happymessage.app.ui.act.MainActivity
+import com.milk.happymessage.common.constrant.FirebaseKey
+import com.milk.happymessage.common.firebase.FireBaseManager
 import com.milk.happymessage.common.media.MediaLogger
 import com.milk.happymessage.common.media.engine.CoilEngine
 import com.milk.happymessage.common.media.engine.ImageCropEngine
@@ -26,8 +28,6 @@ import com.milk.happymessage.common.permission.Permission
 import com.milk.happymessage.common.ui.AbstractActivity
 import com.milk.happymessage.common.ui.view.BanEnterInputFilter
 import com.milk.happymessage.databinding.ActivityPresetProfileBinding
-import com.milk.happymessage.common.firebase.FireBaseManager
-import com.milk.happymessage.common.constrant.FirebaseKey
 import com.milk.happymessage.login.ui.dialog.LoadingDialog
 import com.milk.happymessage.login.ui.vm.PresetProfileViewModel
 import com.milk.happymessage.user.ui.config.AvatarImage
@@ -54,7 +54,6 @@ class PresetProfileActivity : AbstractActivity() {
         immersiveStatusBar()
         binding.headerToolbar.statusBarPadding()
         binding.root.navigationBarPadding()
-        binding.headerToolbar.setTitle(string(R.string.preset_profile_title))
         binding.ivUserGender.setImageResource(defaultGender)
         binding.ivUserAvatar.setImageResource(defaultAvatar)
         binding.etUserName.filters =

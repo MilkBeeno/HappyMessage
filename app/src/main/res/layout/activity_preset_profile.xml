@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/common_app_background"
+    android:background="@drawable/shape_app_background"
     android:clickable="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
@@ -19,23 +19,33 @@
         android:layout_width="match_parent"
         android:layout_height="42dp" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/preset_profile_title"
+        android:textColor="@color/FF171C21"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+
     <FrameLayout
-        android:layout_width="81dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="175dp">
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="48dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivUserAvatar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="141dp"
+            android:layout_height="141dp"
+            android:layout_gravity="center"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/circleStyle"
-            tools:src="@drawable/common_default_man" />
+            tools:src="@drawable/common_default_avatar_man" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivUserGender"
-            android:layout_width="22dp"
-            android:layout_height="16dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="4dp"
             android:scaleType="centerCrop"
@@ -45,8 +55,8 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="46dp"
-        android:background="@drawable/shape_create_name_background"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/shape_common_button_style_3"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="19dp"
@@ -58,15 +68,15 @@
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
             android:text="@string/preset_profile_tag"
-            android:textColor="@color/FF8E58FB"
+            android:textColor="@color/FF242B33"
             android:textSize="16sp" />
 
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/shape_create_name_line_background" />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -79,17 +89,24 @@
             android:gravity="center_vertical|start"
             android:hint="@string/preset_profile_name_hint"
             android:maxLines="1"
-            android:textColor="@color/FF45464D"
-            android:textSize="16sp" />
+            android:textColor="@color/FF5456FF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.legacy.widget.Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvStart"
         android:layout_width="match_parent"
         android:layout_height="43dp"
         android:layout_marginTop="19dp"
-        android:background="@drawable/shape_common_next_background"
+        android:layout_marginBottom="107dp"
+        android:background="@drawable/shape_common_button_style_1"
         android:gravity="center"
         android:text="@string/preset_profile_confirm"
         android:textColor="@color/white"

@@ -157,9 +157,9 @@ class ImageLoader(
             request(data)
             isCircle = true
             placeholderResId = if (gender == Gender.Woman.value)
-                R.drawable.common_default_woman
+                R.drawable.common_default_avatar_woman
             else
-                R.drawable.common_default_man
+                R.drawable.common_default_avatar_man
         }
 
         internal fun placeholder(@DrawableRes drawableResId: Int) = apply {

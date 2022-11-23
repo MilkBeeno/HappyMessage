@@ -6,8 +6,8 @@ import com.milk.happymessage.user.status.Gender
 class AvatarImage {
     internal fun obtain(gender: String): Int {
         return if (gender == Gender.Woman.value)
-            R.drawable.common_default_woman
+            R.drawable.common_default_avatar_woman
         else
-            R.drawable.common_default_man
+            R.drawable.common_default_avatar_man
     }
 }
