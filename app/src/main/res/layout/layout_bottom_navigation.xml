@@ -77,7 +77,7 @@
                     android:id="@+id/messageRedDotView"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
-                    android:layout_marginStart="11dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivMessage"
                     app:layout_constraintStart_toStartOf="@+id/ivMessage" />
