@@ -4,18 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@drawable/main_background"
+    android:background="@drawable/shape_app_background"
     android:orientation="vertical"
     tools:context=".app.ui.act.MainActivity">
 
     <FrameLayout
-        android:id="@+id/flContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1">
 
-    <com.milk.happymessage.app.ui.view.BottomNavigation
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        <FrameLayout
+            android:id="@+id/flContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.milk.happymessage.app.ui.view.BottomNavigation
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

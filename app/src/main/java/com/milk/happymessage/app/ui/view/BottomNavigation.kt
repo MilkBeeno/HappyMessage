@@ -10,9 +10,9 @@ import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
 import androidx.annotation.ColorRes
 import com.milk.happymessage.R
-import com.milk.happymessage.databinding.LayoutBottomNavigationBinding
-import com.milk.happymessage.common.firebase.FireBaseManager
 import com.milk.happymessage.common.constrant.FirebaseKey
+import com.milk.happymessage.common.firebase.FireBaseManager
+import com.milk.happymessage.databinding.LayoutBottomNavigationBinding
 
 class BottomNavigation : FrameLayout {
 
@@ -27,13 +27,18 @@ class BottomNavigation : FrameLayout {
     private val zoomAnimation: Animation by lazy {
         AnimationUtils.loadAnimation(context, R.anim.anim_nav_zoom)
     }
-    private val alphaAnimation: Animation by lazy {
+    // 透明度动画
+    /*private val alphaAnimation: Animation by lazy {
         AnimationUtils.loadAnimation(context, R.anim.anim_nav_alpha)
-    }
+    }*/
 
     constructor(ctx: Context) : super(ctx)
     constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
     constructor(ctx: Context, attrs: AttributeSet, defAttr: Int) : super(ctx, attrs, defAttr)
+
+    init {
+        binding.navigationRoot.setOnClickListener {}
+    }
 
 
     fun setItemOnClickListener(listener: ((Boolean, Type) -> Unit)) {
@@ -65,19 +70,13 @@ class BottomNavigation : FrameLayout {
 
     private fun updateHomeNav(select: Boolean = false) {
         if (select) {
-            binding.ivHomeSmall.visibility = GONE
-            binding.tvHome.visibility = GONE
-            binding.ivHomeMedium.visibility = VISIBLE
-            binding.ivHomeMedium.setImageResource(R.drawable.main_nav_hone_select)
-            binding.ivHomeMedium.startAnimation(zoomAnimation)
-            binding.ivHomeSmall.startAnimation(alphaAnimation)
+            binding.ivHomeSmall.startAnimation(zoomAnimation)
+            binding.tvHome.setTextColor(getColor(R.color.FFF23081))
+            binding.ivHomeSmall.setImageResource(R.drawable.main_nav_hone_select)
         } else {
-            binding.ivHomeSmall.visibility = VISIBLE
-            binding.tvHome.visibility = VISIBLE
-            binding.ivHomeMedium.visibility = GONE
+            binding.ivHomeSmall.clearAnimation()
+            binding.tvHome.setTextColor(getColor(R.color.FFA3B8CC))
             binding.ivHomeSmall.setImageResource(R.drawable.main_nav_hone)
-            binding.tvHome.setTextColor(getColor(R.color.FF5B5D66))
-            binding.ivHomeMedium.clearAnimation()
         }
         binding.llHome.backPressureClickListener(Type.Home) {
             if (lastSelectType == Type.Home)
@@ -92,11 +91,11 @@ class BottomNavigation : FrameLayout {
     private fun updateMessageNav(select: Boolean = false) {
         if (select) {
             binding.ivMessage.startAnimation(zoomAnimation)
-            binding.tvMessage.setTextColor(getColor(R.color.FF8E58FB))
+            binding.tvMessage.setTextColor(getColor(R.color.FFF23081))
             binding.ivMessage.setImageResource(R.drawable.main_nav_message_select)
         } else {
             binding.ivMessage.clearAnimation()
-            binding.tvMessage.setTextColor(getColor(R.color.FF5B5D66))
+            binding.tvMessage.setTextColor(getColor(R.color.FFA3B8CC))
             binding.ivMessage.setImageResource(R.drawable.main_nav_message)
         }
         binding.clMessage.backPressureClickListener(Type.Message) {
@@ -111,11 +110,11 @@ class BottomNavigation : FrameLayout {
         if (select) {
             FireBaseManager.logEvent(FirebaseKey.CLICK_MY_BUTTON)
             binding.ivMine.startAnimation(zoomAnimation)
-            binding.tvMine.setTextColor(getColor(R.color.FF8E58FB))
+            binding.tvMine.setTextColor(getColor(R.color.FFF23081))
             binding.ivMine.setImageResource(R.drawable.main_nav_mine_select)
         } else {
             binding.ivMine.clearAnimation()
-            binding.tvMine.setTextColor(getColor(R.color.FF5B5D66))
+            binding.tvMine.setTextColor(getColor(R.color.FFA3B8CC))
             binding.ivMine.setImageResource(R.drawable.main_nav_mine)
         }
         binding.llMine.backPressureClickListener(Type.Mine) {
