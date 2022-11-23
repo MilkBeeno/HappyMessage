@@ -14,15 +14,11 @@
     android:paddingEnd="19dp"
     tools:context=".login.ui.act.PresetProfileActivity">
 
-    <com.milk.happymessage.common.ui.view.HeaderToolbar
-        android:id="@+id/headerToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="42dp" />
-
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/headerToolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="114dp"
         android:text="@string/preset_profile_title"
         android:textColor="@color/FF171C21"
         android:textSize="29sp"
