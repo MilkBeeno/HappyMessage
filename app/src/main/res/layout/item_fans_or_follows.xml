@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:textColor="@color/FF58FFD3"
-            android:textSize="8sp"
+            android:textSize="12sp"
             tools:ignore="SmallSp"
             tools:text="Online" />
     </androidx.appcompat.widget.LinearLayoutCompat>
