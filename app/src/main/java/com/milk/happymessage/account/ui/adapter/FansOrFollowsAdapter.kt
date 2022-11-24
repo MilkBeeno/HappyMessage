@@ -35,10 +35,6 @@ class FansOrFollowsAdapter : AbstractPagingAdapter<UserInfoEntity>(
             .placeholder(R.drawable.common_list_default_big)
             .target(holder.getView(R.id.ivUserImage))
             .build()
-        ImageLoader.Builder()
-            .loadAvatar(item.targetAvatar, item.targetGender)
-            .target(holder.getView(R.id.ivUserAvatar))
-            .build()
         holder.getView<View>(R.id.vState).setBackgroundResource(
             if (isOnline) {
                 R.drawable.shape_home_online_state
@@ -49,9 +45,9 @@ class FansOrFollowsAdapter : AbstractPagingAdapter<UserInfoEntity>(
         holder.getView<AppCompatTextView>(R.id.tvState).apply {
             setTextColor(
                 if (isOnline) {
-                    context.color(R.color.FF58FFD3)
+                    context.color(R.color.FFFFB1D2)
                 } else {
-                    context.color(R.color.FFEAECF6)
+                    context.color(R.color.FF8F96B2)
                 }
             )
             setText(if (isOnline) R.string.home_online else R.string.home_offline)

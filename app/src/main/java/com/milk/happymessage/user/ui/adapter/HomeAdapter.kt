@@ -5,7 +5,6 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.DiffUtil
 import com.milk.happymessage.R
-import com.milk.happymessage.user.ui.view.ListAdView
 import com.milk.happymessage.common.media.loader.ImageLoader
 import com.milk.happymessage.common.paging.AbstractPagingAdapter
 import com.milk.happymessage.common.paging.FooterLoadStateAdapter
@@ -14,6 +13,7 @@ import com.milk.happymessage.common.paging.PagingViewHolder
 import com.milk.happymessage.user.data.UserSimpleInfoModel
 import com.milk.happymessage.user.status.ItemAdType
 import com.milk.happymessage.user.status.OnlineState
+import com.milk.happymessage.user.ui.view.ListAdView
 import com.milk.simple.ktx.*
 
 class HomeAdapter : AbstractPagingAdapter<UserSimpleInfoModel>(
@@ -83,16 +83,12 @@ class HomeAdapter : AbstractPagingAdapter<UserSimpleInfoModel>(
                 .target(this)
                 .build()
         }
-        ImageLoader.Builder()
-            .loadAvatar(item.targetAvatar, item.targetGender)
-            .target(holder.getView(R.id.ivUserAvatar))
-            .build()
         holder.getView<View>(R.id.vState).setBackgroundResource(
             if (isOnline) R.drawable.shape_home_online_state else R.drawable.shape_home_offline_state
         )
         holder.getView<AppCompatTextView>(R.id.tvState).apply {
             setTextColor(
-                if (isOnline) context.color(R.color.FF58FFD3) else context.color(R.color.FFEAECF6)
+                if (isOnline) context.color(R.color.FFFFB1D2) else context.color(R.color.FF8F96B2)
             )
             setText(if (isOnline) R.string.home_online else R.string.home_offline)
         }

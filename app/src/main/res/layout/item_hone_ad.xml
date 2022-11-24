@@ -6,11 +6,6 @@
     android:background="@drawable/shape_main_home_list_ad"
     tools:layout_width="166dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/shape_home_top_shadow" />
-
     <com.milk.happymessage.user.ui.view.ListAdView
         android:id="@+id/homeAdLayout"
         android:layout_width="match_parent"

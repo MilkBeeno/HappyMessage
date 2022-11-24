@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="transparent">#00000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_70">#B3000000</color>
     <color name="FF8EFFD3">#FF8EFFD3</color>
     <color name="FFFAFAFA">#FFFAFAFA</color>
     <color name="FF242B33">#FF242B33</color>
@@ -10,13 +13,14 @@
     <color name="FF6B8299">#FF6B8299</color>
     <color name="FF5456FF">#FF5456FF</color>
     <color name="FFA3B8CC">#FFA3B8CC</color>
+    <color name="FF6B79B2">#FF6B79B2</color>
+    <color name="FFFFB1D2">#FFFFB1D2</color>
+    <color name="FF8F96B2">#FF8F96B2</color>
 
-    <color name="transparent">#00000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="white_90">#E6FFFFFF</color>
     <color name="white_30">#B3FFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="black_70">#99000000</color>
     <color name="black_60">#66000000</color>
     <color name="black_50">#80000000</color>
     <color name="black_05">#0D000000</color>

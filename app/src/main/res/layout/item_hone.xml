@@ -15,59 +15,50 @@
         app:shapeAppearanceOverlay="@style/roundCornerStyle_10" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:background="@drawable/shape_home_top_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/shape_home_online_background"
         android:gravity="center_vertical"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp">
+        android:paddingStart="6dp"
+        android:paddingEnd="7dp">
 
-        <FrameLayout
-            android:layout_width="19dp"
-            android:layout_height="19dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivUserAvatar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="0.25dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/common_default_avatar_man"
-                app:shapeAppearanceOverlay="@style/circleStyle"
-                app:strokeColor="@color/white"
-                app:strokeWidth="0.5dp" />
-
-            <View
-                android:id="@+id/vState"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:layout_gravity="end|bottom" />
-        </FrameLayout>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:ellipsize="end"
-            android:lines="1"
-            android:maxWidth="90dp"
-            android:textColor="@color/white"
-            android:textSize="11sp"
-            tools:text="User's Nickname" />
-
-        <androidx.legacy.widget.Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+        <View
+            android:id="@+id/vState"
+            android:layout_width="5dp"
+            android:layout_height="5dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
             android:textColor="@color/FF58FFD3"
             android:textSize="8sp"
             tools:ignore="SmallSp"
             tools:text="Online" />
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/shape_home_bottom_shadow">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="90dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="User's Nickname" />
+    </FrameLayout>
 </FrameLayout>
