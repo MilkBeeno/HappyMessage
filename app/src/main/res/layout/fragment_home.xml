@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/headerToolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginStart="12dp"
-        android:gravity="center_vertical"
-        android:textColor="@color/FF171C21"
-        android:textSize="19sp"
-        android:textStyle="bold" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headerToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/FF171C21"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            tools:text="Discover" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="94dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/common_tag" />
+    </FrameLayout>
 
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/refresh"
