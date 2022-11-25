@@ -9,6 +9,7 @@ import com.milk.happymessage.R
 import com.milk.happymessage.account.Account
 import com.milk.happymessage.chat.ui.act.ChatMessageActivity
 import com.milk.happymessage.chat.ui.adapter.ConversationAdapter
+import com.milk.happymessage.chat.ui.dialog.ConversationDeleteDialog
 import com.milk.happymessage.chat.ui.dialog.ConversationPopupWindow
 import com.milk.happymessage.chat.ui.vm.ConversationViewModel
 import com.milk.happymessage.common.constrant.EventKey
@@ -26,6 +27,7 @@ class ConversationFragment : AbstractFragment() {
     private val splitHeight by lazy { requireActivity().obtainScreenHeight() / 2 }
     private val popupOffsetX by lazy { -requireContext().dp2px(190f).toInt() }
     private val popupOffsetY by lazy { requireActivity().dp2px(94.5f).toInt() }
+    private val conversationDeleteDialog by lazy { ConversationDeleteDialog(requireActivity()) }
 
     override fun getRootView(): View = binding.root
 
@@ -72,12 +74,16 @@ class ConversationFragment : AbstractFragment() {
                 }
                 .setDeleteRequest {
                     FireBaseManager.logEvent(FirebaseKey.CLICK_THE_DELETE)
-                    conversationViewModel.deleteChatMessage(conversation.targetId)
+                    conversationDeleteDialog.setConversationTargetId(conversation.targetId)
+                    conversationDeleteDialog.show()
                 }
                 .build()
             true
         }
         binding.tvChatWithOther.setOnClickListener(this)
+        conversationDeleteDialog.setOnConfirmListener {
+            conversationViewModel.deleteChatMessage(it)
+        }
     }
 
     override fun initializeObserver() {

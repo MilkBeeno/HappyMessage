@@ -95,7 +95,7 @@
     <string name="chat_message_list_empty">No Message</string>
     <string name="chat_message_send">Send</string>
     <string name="chat_message_hint">Please enter a message</string>
-    <string name="chat_message_say_hi_title">Hi~</string>
+    <string name="chat_message_say_hi_title">Say hi~</string>
     <string name="chat_message_say_hi_desc">Send hello and make friends</string>
     <string name="chat_message_delete">Delete</string>
     <string name="chat_message_list_with_other">Chat with other</string>
@@ -142,11 +142,12 @@
     <string name="turn_on_notification_title">Turn on notification function</string>
     <string name="turn_on_notification_content">Make sure you receive new messages</string>
     <string name="turn_on_notification_desc">Please turn on the notification function</string>
-    <string name="dialog_recharge_subscribed">You have also successfully subscribed to</string>
     <string name="recharge_discount_number">% OFF</string>
     <string name="dialog_report_title">Block and Report</string>
     <string name="dialog_report_desc">What\'s the problem ?</string>
     <string name="dialog_report_options_first">Harassment</string>
     <string name="dialog_report_options_second">False Gender</string>
     <string name="dialog_report_options_third">Nudity</string>
+    <string name="dialog_conversation_delete_title">All records are cleared after deletion</string>
+    <string name="dialog_conversation_delete_confirm">CONFIRM DELETION</string>
 </resources>

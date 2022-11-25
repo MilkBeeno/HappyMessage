@@ -1,6 +1,6 @@
 package com.milk.happymessage.chat.ui.adapter
 
-import android.graphics.Color
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DiffUtil
 import com.milk.happymessage.R
 import com.milk.happymessage.account.Account
@@ -11,7 +11,7 @@ import com.milk.happymessage.common.media.loader.ImageLoader
 import com.milk.happymessage.common.paging.AbstractPagingAdapter
 import com.milk.happymessage.common.paging.PagingViewHolder
 import com.milk.happymessage.user.status.Gender
-import com.milk.simple.ktx.color
+import com.milk.simple.ktx.dp2px
 
 class ConversationAdapter : AbstractPagingAdapter<ConversationWithUserInfoEntity>(
     layoutId = R.layout.item_chat_converstaion,
@@ -44,12 +44,7 @@ class ConversationAdapter : AbstractPagingAdapter<ConversationWithUserInfoEntity
     }
 ) {
     override fun convert(holder: PagingViewHolder, item: ConversationWithUserInfoEntity) {
-        holder.itemView.setBackgroundColor(
-            if (item.conversation.putTopTime > 0)
-                holder.itemView.context.color(R.color.FFF1EEF5)
-            else
-                Color.TRANSPARENT
-        )
+        holder.setVisible(R.id.ivTopOn, item.conversation.putTopTime > 0)
         ImageLoader.Builder()
             .loadAvatar(getTargetAvatar(item), getTargetGender(item))
             .target(holder.getView(R.id.ivUserAvatar))
@@ -57,8 +52,15 @@ class ConversationAdapter : AbstractPagingAdapter<ConversationWithUserInfoEntity
         holder.setText(R.id.tvUserName, getTargetName(item))
         holder.setText(R.id.tvMessage, item.conversation.messageContent)
         holder.setText(R.id.tvTime, item.conversation.operationTime.convertMessageTime())
-        holder.getView<MessageRedDotView>(R.id.redDotRootView)
-            .updateMessageCount(item.conversation.unReadCount)
+        val redDotView = holder.getView<MessageRedDotView>(R.id.redDotRootView)
+        redDotView.updateMessageCount(100)
+        val params = redDotView.layoutParams as ConstraintLayout.LayoutParams
+        if (item.conversation.unReadCount >= 99) {
+            params.marginEnd = -redDotView.context.dp2px(10f).toInt()
+        } else {
+            params.marginEnd = 0
+        }
+        redDotView.layoutParams = params
     }
 
     private fun getTargetGender(conversationWithUserInfoEntity: ConversationWithUserInfoEntity): String {

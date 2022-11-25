@@ -10,7 +10,7 @@
         android:id="@+id/llContent"
         android:layout_width="274dp"
         android:layout_height="269dp"
-        android:background="@drawable/shape_radius_19_white"
+        android:background="@drawable/shape_common_radius_19_white"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -66,9 +66,11 @@ class ChatMessageActivity : AbstractActivity() {
                 RefreshStatus.Success -> {
                     val position = chatMessageAdapter.itemCount - 1
                     binding.rvMessage.scrollToPosition(position)
+                    binding.ivSayHi.gone()
                     binding.clSayHi.gone()
                 }
                 RefreshStatus.Empty -> {
+                    binding.ivSayHi.visible()
                     binding.clSayHi.visible()
                 }
                 else -> Unit
@@ -101,7 +103,7 @@ class ChatMessageActivity : AbstractActivity() {
         if (binding.etMessage.text.toString().isBlank()) {
             binding.tvSend.setBackgroundResource(R.drawable.shape_chat_message_send_un_available)
         } else {
-            binding.tvSend.setBackgroundResource(R.drawable.shape_chat_message_send_available)
+            binding.tvSend.setBackgroundResource(R.drawable.shape_common_radius_8_pink)
         }
     }
 
@@ -132,7 +134,10 @@ class ChatMessageActivity : AbstractActivity() {
         super.onMultipleClick(view)
         when (view) {
             binding.ivMore -> showPopupWindow()
-            binding.ivSayHiCancel -> binding.clSayHi.gone()
+            binding.ivSayHiCancel -> {
+                binding.ivSayHi.gone()
+                binding.clSayHi.gone()
+            }
             binding.tvSayHiSend -> {
                 val messageContent = binding.tvSayHiTitle.text.toString()
                 chatMessageViewModel.sendTextChatMessage(messageContent)

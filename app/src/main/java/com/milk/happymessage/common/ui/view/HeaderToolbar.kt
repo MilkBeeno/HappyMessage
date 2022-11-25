@@ -20,12 +20,12 @@ class HeaderToolbar : FrameLayout {
     constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
     constructor(ctx: Context, attrs: AttributeSet, defAttr: Int) : super(ctx, attrs, defAttr)
 
-    fun setTitle(@StringRes resId: Int, @ColorRes color: Int = context.color(R.color.FF1E1E21)) {
+    fun setTitle(@StringRes resId: Int, @ColorRes color: Int = context.color(R.color.FF171C21)) {
         binding.tvTitle.text = context.resources.getString(resId)
         binding.tvTitle.setTextColor(color)
     }
 
-    fun setTitle(title: String, @ColorRes color: Int = context.color(R.color.FF1E1E21)) {
+    fun setTitle(title: String, @ColorRes color: Int = context.color(R.color.FF171C21)) {
         binding.tvTitle.text = title
         binding.tvTitle.setTextColor(color)
     }

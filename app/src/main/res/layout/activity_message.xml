@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/FFF6F7F7"
+    android:background="@color/FFF5F5F5"
     android:orientation="vertical"
     tools:context=".chat.ui.act.ChatMessageActivity">
 
@@ -41,12 +41,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clSayHi"
             android:layout_width="match_parent"
-            android:layout_height="99dp"
+            android:layout_height="106dp"
             android:layout_gravity="bottom"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginBottom="14dp"
-            android:background="@drawable/shape_radius_10_white"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/shape_common_radius_10_white"
             android:visibility="gone"
             tools:visibility="visible">
 
@@ -68,8 +68,9 @@
                 android:layout_marginTop="12dp"
                 android:includeFontPadding="false"
                 android:text="@string/chat_message_say_hi_title"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="14sp"
+                android:textColor="@color/FF171C21"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -79,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="29dp"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/shape_common_next_background"
+                android:background="@drawable/shape_common_radius_8_pink"
                 android:gravity="center"
                 android:paddingStart="33dp"
                 android:paddingEnd="33dp"
@@ -97,12 +98,22 @@
                 android:layout_marginTop="6dp"
                 android:includeFontPadding="false"
                 android:text="@string/chat_message_say_hi_desc"
-                android:textColor="@color/FF5B5D66"
-                android:textSize="11sp"
+                android:textColor="@color/FF6B8299"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSayHiSend" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSayHi"
+            android:layout_width="43dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="101dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chat_message_say_hi" />
     </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -122,6 +133,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_chat_message_edit_text"
             android:hint="@string/chat_message_hint"
+            android:includeFontPadding="false"
             android:maxLines="4"
             android:minHeight="34dp"
             android:padding="10dp"
@@ -142,6 +154,7 @@
             android:layout_marginStart="10dp"
             android:background="@drawable/shape_chat_message_send_un_available"
             android:gravity="center"
+            android:minHeight="34dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/chat_message_send"
@@ -150,6 +163,5 @@
             app:layout_constraintBottom_toBottomOf="@+id/etMessage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/etMessage" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

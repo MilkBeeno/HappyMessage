@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:background="@color/black_70">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivClose"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="143dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="29dp"
             android:scaleType="centerCrop"
             android:src="@drawable/login_max_client_number"
             app:layout_constraintBottom_toTopOf="@+id/llContent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintEnd_toEndOf="@+id/llContent" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llContent"
@@ -30,25 +28,25 @@
             android:layout_gravity="center"
             android:layout_marginStart="34dp"
             android:layout_marginEnd="34dp"
-            android:background="@drawable/shape_dialog_notification"
+            android:background="@drawable/shape_common_radius_19_white"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="163dp"
-                android:layout_height="103dp"
-                android:layout_marginTop="7dp"
+                android:layout_width="168dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="11dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dialog_notification" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/turn_on_notification_title"
-                android:textColor="@color/FF1E1E21"
+                android:textColor="@color/FF171C21"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -56,11 +54,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="9dp"
                 android:layout_marginEnd="19dp"
                 android:includeFontPadding="false"
                 android:text="@string/turn_on_notification_content"
-                android:textColor="@color/FF1E1E21"
+                android:textColor="@color/FF171C21"
                 android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -70,7 +68,7 @@
                 android:layout_marginEnd="19dp"
                 android:includeFontPadding="false"
                 android:text="@string/turn_on_notification_desc"
-                android:textColor="@color/FF8E58FB"
+                android:textColor="@color/FF171C21"
                 android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -81,7 +79,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="19dp"
                 android:layout_marginBottom="21dp"
-                android:background="@drawable/shape_common_next_background"
+                android:background="@drawable/shape_common_button_style_1"
                 android:gravity="center"
                 android:text="@string/common_confirm"
                 android:textColor="@color/white"

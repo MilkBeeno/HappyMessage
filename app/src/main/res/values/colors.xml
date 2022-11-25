@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="black_80">#CC000000</color>
     <color name="black_70">#B3000000</color>
@@ -16,8 +18,11 @@
     <color name="FF6B79B2">#FF6B79B2</color>
     <color name="FFFFB1D2">#FFFFB1D2</color>
     <color name="FF8F96B2">#FF8F96B2</color>
+    <color name="FFF5F5F5">#FFF5F5F5</color>
+    <color name="FF475766">#FF475766</color>
+    <color name="FFEDEDED">#FFEDEDED</color>
+    <color name="FFECEDED">#FFECEDED</color>
 
-    <color name="white">#FFFFFFFF</color>
     <color name="white_90">#E6FFFFFF</color>
     <color name="white_30">#B3FFFFFF</color>
     <color name="black">#FF000000</color>
@@ -40,13 +45,11 @@
     <color name="FF45464D">#FF45464D</color>
     <color name="FFFBFBFB">#FFFBFBFB</color>
     <color name="FFDFE0E0">#FFDFE0E0</color>
-    <color name="FFF5F5F5">#FFF5F5F5</color>
     <color name="FFF2F2F2">#FFF2F2F2</color>
     <color name="FFB7BACC">#FFB7BACC</color>
     <color name="FF58FFD3">#FF58FFD3</color>
     <color name="FFEAECF6">#FFEAECF6</color>
     <color name="FFC1AEE9">#FFC1AEE9</color>
-    <color name="FFEDEDED">#FFEDEDED</color>
     <color name="FFFFFBF2">#FFFFFBF2</color>
     <color name="FFFFF9FD">#FFFFF9FD</color>
     <color name="FFF8F4FB">#FFF8F4FB</color>
