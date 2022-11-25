@@ -1,160 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <FrameLayout
+        android:id="@+id/flHeader"
         android:layout_width="match_parent"
-        android:layout_height="372dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/mine_background" />
+        android:layout_height="385dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAvatarLargest"
+            android:layout_width="match_parent"
+            android:layout_height="385dp"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_80" />
+    </FrameLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="71dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/common_default_avatar_man"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleStyle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivUserGender"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="-17dp"
+        android:layout_marginBottom="-17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUserAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/ivUserAvatar"
+        tools:src="@drawable/common_gender_man" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/mine_default_user_name"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar" />
+
+    <View
+        android:id="@+id/vCenterLine"
+        android:layout_width="1dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/FFDFE0E0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFollows"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/vCenterLine"
+        app:layout_constraintEnd_toEndOf="@+id/vCenterLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vCenterLine">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFollows"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mine_follows"
+            app:layout_constraintBottom_toTopOf="@+id/tvFollowsDesc"
+            app:layout_constraintEnd_toStartOf="@+id/tvFollows"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFollows"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivFollows"
+            app:layout_constraintTop_toTopOf="@+id/ivFollows"
+            tools:text="9" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollowsDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:text="@string/mine_follows"
+            android:textColor="@color/white_60"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvFollows"
+            app:layout_constraintStart_toStartOf="@+id/ivFollows"
+            app:layout_constraintTop_toBottomOf="@+id/ivFollows" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFans"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/vCenterLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vCenterLine"
+        app:layout_constraintTop_toTopOf="@+id/vCenterLine">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFans"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mine_follows"
+            app:layout_constraintBottom_toTopOf="@+id/tvFansDesc"
+            app:layout_constraintEnd_toStartOf="@+id/tvFans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivFans"
+            app:layout_constraintTop_toTopOf="@+id/ivFans"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFansDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:text="@string/mine_fans"
+            android:textColor="@color/white_60"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvFans"
+            app:layout_constraintStart_toStartOf="@+id/ivFans"
+            app:layout_constraintTop_toBottomOf="@+id/ivFans" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/shape_common_button_style_2"
+        android:gravity="center"
+        android:paddingStart="34dp"
+        android:paddingEnd="34dp"
+        android:text="@string/mine_edit_profile"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vCenterLine" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/shape_common_radius_29_white_top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProfile">
 
-        <FrameLayout
-            android:layout_width="77dp"
-            android:layout_height="77dp"
-            android:layout_marginTop="31dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivUserAvatar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/common_default_avatar_man"
-                app:shapeAppearanceOverlay="@style/circleStyle" />
-
-            <com.milk.happymessage.common.ui.view.GenderImageView
-                android:id="@+id/ivUserGender"
-                android:layout_width="19dp"
-                android:layout_height="19dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="4dp"
-                tools:src="@drawable/common_gender_man" />
-        </FrameLayout>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/mine_default_user_name"
-            android:textColor="@color/FF1E1E21"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_height="67dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/mine_recharge_background">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llFollows"
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCancelTitle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_marginStart="86dp"
+                android:text="@string/mine_recharge"
+                android:textColor="@color/FF171C21"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tvCancelDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintVertical_chainStyle="packed" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvFollows"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/FF1E1E21"
-                    android:textSize="27sp"
-                    tools:text="0" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:includeFontPadding="false"
-                    android:text="@string/mine_follows"
-                    android:textColor="@color/FF898C99"
-                    android:textSize="12sp" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/FFDFE0E0" />
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llFans"
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCancelDesc"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_marginTop="2dp"
+                android:text="@string/mine_recharge_desc"
+                android:textColor="@color/FF6B8299"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvCancelTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCancelTitle" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvFans"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/FF1E1E21"
-                    android:textSize="27sp"
-                    tools:text="0" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRecharge"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shape_common_button_style_2"
+                android:gravity="center"
+                android:paddingStart="23dp"
+                android:paddingEnd="23dp"
+                android:text="@string/mine_recharge_now"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:includeFontPadding="false"
-                    android:text="@string/mine_fans"
-                    android:textColor="@color/FF898C99"
-                    android:textSize="12sp" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <com.milk.happymessage.account.ui.view.MineOptions
+            android:id="@+id/blackedList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/shape_mine_background"
-            android:orientation="vertical">
+            android:layout_height="49dp"
+            android:layout_marginTop="12dp" />
 
-            <com.milk.happymessage.account.ui.view.MineOptions
-                android:id="@+id/editProfile"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="10dp" />
+        <com.milk.happymessage.account.ui.view.MineOptions
+            android:id="@+id/aboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="49dp" />
 
-            <com.milk.happymessage.account.ui.view.MineOptions
-                android:id="@+id/recharge"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="10dp" />
-
-            <com.milk.happymessage.account.ui.view.MineOptions
-                android:id="@+id/blackedList"
-                android:layout_width="match_parent"
-                android:layout_height="53dp" />
-
-            <com.milk.happymessage.account.ui.view.MineOptions
-                android:id="@+id/aboutUs"
-                android:layout_width="match_parent"
-                android:layout_height="53dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="@color/FFF2F2F2" />
-
-            <com.milk.happymessage.account.ui.view.MineOptions
-                android:id="@+id/signOut"
-                android:layout_width="match_parent"
-                android:layout_height="53dp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <com.milk.happymessage.account.ui.view.MineOptions
+            android:id="@+id/signOut"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="10dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
     <!-- 未登录高斯模糊显示布局 -->
     <FrameLayout
@@ -179,4 +289,4 @@
             android:textColor="@color/white"
             android:textSize="16sp" />
     </FrameLayout>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

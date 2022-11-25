@@ -2,36 +2,54 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="121dp"
-    android:background="@drawable/shape_mine_log_out"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_common_radius_29_white_top"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:layout_gravity="bottom">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/FF898C99"
-        android:textSize="12sp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/FF475766"
+        android:textSize="16sp"
+        android:textStyle="bold"
         tools:text="Title" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvConfirm"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:textColor="@color/FFFA64C8"
-        android:textSize="14sp"
-        tools:text="OK" />
+        android:background="@color/FFEDEDED"
+        android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvLogoutCancel"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:gravity="center"
-        android:text="@string/mine_log_out_cancel"
-        android:textColor="@color/FF5B5D66"
-        android:textSize="14sp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/shape_common_radius_10_white"
+            android:gravity="center"
+            android:textColor="@color/FFF23081"
+            android:textSize="14sp"
+            tools:text="OK" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLogoutCancel"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/shape_common_radius_10_white"
+            android:gravity="center"
+            android:text="@string/common_cancel"
+            android:textColor="@color/FF242B33"
+            android:textSize="14sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

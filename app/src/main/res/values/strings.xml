@@ -28,9 +28,6 @@
     <string name="login_facebook_auth_failed">Facebook auth failure,please try again.</string>
     <string name="login_max_client_title">Can\'t register</string>
     <string name="login_max_client_content">Register with another phone</string>
-
-
-
     <!--App 内的翻译-->
     <string name="common_list_loading">Loading</string>
     <string name="common_list_no_more_data">No more data</string>
@@ -54,8 +51,6 @@
     <string name="common_black">Pull black</string>
     <string name="common_report">Report</string>
     <string name="common_report_successful">Report successful,thanks for your report.</string>
-
-
     <!--创建名字页面翻译-->
     <string name="preset_profile_title">Basic Information</string>
     <string name="preset_profile_tag">Name</string>
@@ -80,13 +75,14 @@
     <string name="mine_fans">Fans</string>
     <string name="mine_edit_profile">Edit profile</string>
     <string name="mine_recharge">Cancel Ads</string>
+    <string name="mine_recharge_desc">Unlock All Features</string>
+    <string name="mine_recharge_now">Now</string>
     <string name="mine_sign_out">Sign out</string>
     <string name="mine_about_us">About us</string>
     <string name="mine_blacked_list">Blacked list</string>
     <string name="mine_login">Log In</string>
     <string name="mine_log_out_title">Are you sure you want to log out?</string>
-    <string name="mine_log_out_confirm">Sign Out</string>
-    <string name="mine_log_out_cancel">Cancel</string>
+    <string name="mine_log_out_confirm">SIGN OUT</string>
     <!--关于我们页面翻译-->
     <string name="about_us_user_agreement">User Agreement</string>
     <string name="about_us_user_privacy">Privacy policy</string>

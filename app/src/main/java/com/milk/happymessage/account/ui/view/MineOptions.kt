@@ -23,11 +23,9 @@ class MineOptions : FrameLayout {
     internal fun setOption(
         @DrawableRes image: Int,
         @StringRes string: Int,
-        @ColorRes color: Int = context.color(R.color.FF1E1E21),
-        showLine: Boolean = true
+        @ColorRes color: Int = context.color(R.color.FF1E1E21)
     ) {
         binding.ivContent.setImageResource(image)
-        binding.vLine.visibility = if (showLine) VISIBLE else GONE
         binding.tvContent.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             context.resources.getString(string, context.theme)
         } else {

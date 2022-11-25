@@ -17,32 +17,34 @@ import com.milk.happymessage.login.ui.act.GenderActivity
 import com.milk.happymessage.login.ui.act.LoginActivity
 import com.milk.happymessage.login.ui.dialog.LoadingDialog
 import com.milk.happymessage.user.ui.config.AvatarImage
-import com.milk.simple.ktx.*
+import com.milk.happymessage.user.ui.config.GenderImage
+import com.milk.simple.ktx.collectLatest
+import com.milk.simple.ktx.gone
+import com.milk.simple.ktx.string
+import com.milk.simple.ktx.visible
 
 class MineFragment : AbstractFragment() {
     private val mainViewModel by activityViewModels<MainViewModel>()
     private val binding by lazy { FragmentMineBinding.inflate(layoutInflater) }
-    private val defaultAvatar by lazy { AvatarImage().obtain(Account.userGender) }
+    private val defaultAvatar by lazy { AvatarImage.obtain(Account.userGender) }
     private val logoutDialog by lazy { LogoutDialog(requireActivity()) }
     private val loadingDialog by lazy { LoadingDialog(requireActivity()) }
 
     override fun getRootView(): View = binding.root
 
     override fun initializeView() {
-        binding.llFollows.setOnClickListener(this)
-        binding.llFans.setOnClickListener(this)
-        binding.editProfile.setOnClickListener(this)
-        binding.recharge.setOnClickListener(this)
+        binding.clFollows.setOnClickListener(this)
+        binding.clFans.setOnClickListener(this)
+        binding.tvEditProfile.setOnClickListener(this)
+        binding.tvRecharge.setOnClickListener(this)
         binding.blackedList.setOnClickListener(this)
         binding.aboutUs.setOnClickListener(this)
         binding.signOut.setOnClickListener(this)
         binding.tvLogin.setOnClickListener(this)
         binding.flNotSigned.setOnClickListener(this)
-        binding.editProfile.setOption(R.drawable.mine_edit_profile, R.string.mine_edit_profile)
-        binding.recharge.setOption(R.drawable.mine_recharge, R.string.mine_recharge, requireContext().color(R.color.FF744311))
         binding.blackedList.setOption(R.drawable.mine_blacked_list, R.string.mine_blacked_list)
         binding.aboutUs.setOption(R.drawable.mine_about_us, R.string.mine_about_us)
-        binding.signOut.setOption(R.drawable.mine_sign_out, R.string.mine_sign_out, showLine = false)
+        binding.signOut.setOption(R.drawable.mine_sign_out, R.string.mine_sign_out)
         logoutDialog.setOnConfirmListener {
             FireBaseManager.logEvent(FirebaseKey.LOG_OUT_SUCCESS)
             loadingDialog.show()
@@ -62,15 +64,20 @@ class MineFragment : AbstractFragment() {
         Account.userAvatarFlow.collectLatest(this) {
             if (it.isNotBlank()) {
                 ImageLoader.Builder().loadAvatar(it).target(binding.ivUserAvatar).build()
+                ImageLoader.Builder()
+                    .request(it)
+                    .target(binding.ivAvatarLargest)
+                    .build()
             } else {
                 binding.ivUserAvatar.setImageResource(defaultAvatar)
             }
         }
         Account.userGenderFlow.collectLatest(this) {
-            binding.ivUserGender.updateGender(it)
+            binding.ivUserGender.setImageResource(GenderImage.obtain(it))
         }
         Account.userNameFlow.collectLatest(this) {
-            binding.tvUserName.text = it.ifBlank { requireActivity().string(R.string.mine_default_user_name) }
+            binding.tvUserName.text =
+                it.ifBlank { requireActivity().string(R.string.mine_default_user_name) }
         }
         Account.userFansFlow.collectLatest(this) {
             binding.tvFans.text = it.toString()
@@ -87,19 +94,19 @@ class MineFragment : AbstractFragment() {
     override fun onMultipleClick(view: View) {
         super.onMultipleClick(view)
         when (view) {
-            binding.llFollows -> {
+            binding.clFollows -> {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_THE_FOLLOW)
                 FollowsActivity.create(requireContext())
             }
-            binding.llFans -> {
+            binding.clFans -> {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_THE_FAN)
                 FansActivity.create(requireContext())
             }
-            binding.editProfile -> {
+            binding.tvEditProfile -> {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_ON_EDIT_PROFILE)
                 EditProfileActivity.create(requireContext())
             }
-            binding.recharge -> {
+            binding.tvRecharge -> {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_THE_SUBSCRIPTION_PORTAL)
                 RechargeActivity.create(requireContext())
             }

@@ -53,7 +53,7 @@ class ConversationAdapter : AbstractPagingAdapter<ConversationWithUserInfoEntity
         holder.setText(R.id.tvMessage, item.conversation.messageContent)
         holder.setText(R.id.tvTime, item.conversation.operationTime.convertMessageTime())
         val redDotView = holder.getView<MessageRedDotView>(R.id.redDotRootView)
-        redDotView.updateMessageCount(100)
+        redDotView.updateMessageCount(item.conversation.unReadCount)
         val params = redDotView.layoutParams as ConstraintLayout.LayoutParams
         if (item.conversation.unReadCount >= 99) {
             params.marginEnd = -redDotView.context.dp2px(10f).toInt()

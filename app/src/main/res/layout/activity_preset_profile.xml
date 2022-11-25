@@ -45,7 +45,7 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="4dp"
             android:scaleType="centerCrop"
-            tools:src="@drawable/create_name_gender_man" />
+            tools:src="@drawable/common_gender_man" />
     </FrameLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat

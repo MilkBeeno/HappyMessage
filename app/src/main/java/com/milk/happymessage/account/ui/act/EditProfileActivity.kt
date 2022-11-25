@@ -41,7 +41,7 @@ import com.milk.simple.ktx.*
 class EditProfileActivity : AbstractActivity() {
     private val binding by lazy { ActivityEditProfileBinding.inflate(layoutInflater) }
     private val editProfileViewModel by viewModels<EditProfileViewModel>()
-    private val defaultAvatar by lazy { AvatarImage().obtain(Account.userGender) }
+    private val defaultAvatar by lazy { AvatarImage.obtain(Account.userGender) }
     private val imageAdapter by lazy { EditProfileImageAdapter() }
     private val uploadDialog by lazy { LoadingDialog(this, string(R.string.common_uploading)) }
 
