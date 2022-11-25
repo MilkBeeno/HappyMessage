@@ -96,7 +96,6 @@ class MainActivity : AbstractActivity() {
 
     private fun initializeView() {
         immersiveStatusBar()
-        binding.flContent.statusBarPadding()
         binding.root.navigationBarPadding()
         setTabSelection(homeFragment)
         binding.navigation.updateSelectNav(BottomNavigation.Type.Home)
