@@ -40,8 +40,8 @@ class MineFragment : AbstractFragment() {
         binding.blackedList.setOnClickListener(this)
         binding.aboutUs.setOnClickListener(this)
         binding.signOut.setOnClickListener(this)
-        binding.tvLogin.setOnClickListener(this)
-        binding.flNotSigned.setOnClickListener(this)
+        binding.clNotSigned.setOnClickListener(this)
+        binding.llLogin.setOnClickListener(this)
         binding.blackedList.setOption(R.drawable.mine_blacked_list, R.string.mine_blacked_list)
         binding.aboutUs.setOption(R.drawable.mine_about_us, R.string.mine_about_us)
         binding.signOut.setOption(R.drawable.mine_sign_out, R.string.mine_sign_out)
@@ -56,9 +56,9 @@ class MineFragment : AbstractFragment() {
     override fun initializeObserver() {
         Account.userLoggedFlow.collectLatest(this) {
             if (it) {
-                binding.flNotSigned.gone()
+                binding.clNotSigned.gone()
             } else {
-                binding.flNotSigned.visible()
+                binding.clNotSigned.visible()
             }
         }
         Account.userAvatarFlow.collectLatest(this) {
@@ -122,7 +122,7 @@ class MineFragment : AbstractFragment() {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_THE_LOG_OUT)
                 logoutDialog.show()
             }
-            binding.tvLogin -> {
+            binding.llLogin -> {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_ON_MY_PAGE_LOGIN_PORTAL)
                 LoginActivity.create(requireContext())
             }
