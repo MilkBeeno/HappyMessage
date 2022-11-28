@@ -12,6 +12,11 @@
 
 #### 首页展示图
 
-[启动页面图](https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img.png)
-[主页面展示图](https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img_1.png)
-[登录注册图](https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img_2.png)
+[启动页面图]
+<div align=center><img src="https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img.png" width="720"/></div>
+
+[主页面展示图]
+<div align=center><img src="https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img_1.png" width="720"/></div>
+
+[登录注册图]
+<div align=center><img src="https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img_2.png" width="720"/></div>
