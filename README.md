@@ -2,7 +2,9 @@
 
 #### 介绍
 
-社交项目 HappyMessage
+社交项目 HappyMessage <br>
+正式包名 : com.milk.simplehappymessage <br>
+测试包名 : com.milk.happymessage <br>
 
 #### 项目地址
 
@@ -13,8 +15,8 @@
 #### 首页展示图
 
 [页面图片]
-<figure class="third">
+<center class="half">
 <img src="https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img.png" width="360"/>
 <img src="https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img_1.png" width="360"/>
 <img src="https://gitee.com/mobplus/HappyMessage/raw/master/app/project_image/img_2.png" width="360"/>
-</figure>
+</center>
