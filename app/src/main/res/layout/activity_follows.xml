@@ -32,18 +32,17 @@
             android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="192dp"
-                android:layout_height="205dp"
+                android:layout_width="206dp"
+                android:layout_height="197dp"
                 android:layout_marginTop="106dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/follows_list_empty" />
+                android:src="@drawable/common_list_empty" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:text="@string/follows_list_empty"
-                android:textColor="@color/FF45464D"
+                android:textColor="@color/FF171C21"
                 android:textSize="14sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -51,12 +50,12 @@
                 android:layout_width="202dp"
                 android:layout_height="43dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/shape_common_next_background"
+                android:background="@drawable/shape_common_button_style_1"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:text="@string/follows_list_to_attention"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
-
         </androidx.appcompat.widget.LinearLayoutCompat>
     </FrameLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
