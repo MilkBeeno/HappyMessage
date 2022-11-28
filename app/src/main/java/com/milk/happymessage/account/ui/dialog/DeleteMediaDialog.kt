@@ -12,6 +12,7 @@ class DeleteMediaDialog(activity: FragmentActivity) :
     SimpleDialog<DialogDoubleConfirmBinding>(activity) {
     private var clickRequest: (() -> Unit)? = null
 
+
     init {
         setGravity(Gravity.BOTTOM)
         setWidthMatchParent(true)
