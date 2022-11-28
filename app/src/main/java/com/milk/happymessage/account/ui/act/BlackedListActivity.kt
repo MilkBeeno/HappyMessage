@@ -50,8 +50,10 @@ class BlackedListActivity : AbstractActivity() {
             loadingDialog.dismiss()
             if (it == RefreshStatus.Success && blackedListAdapter.itemCount > 0) {
                 binding.ivEmpty.gone()
+                binding.tvEmpty.gone()
             } else {
                 binding.ivEmpty.visible()
+                binding.tvEmpty.visible()
             }
         }
         blackedViewModel.pagingSource.flow.collectLatest(this) {

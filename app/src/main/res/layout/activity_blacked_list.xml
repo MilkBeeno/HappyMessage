@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
     tools:context=".account.ui.act.BlackedListActivity">
 
     <com.milk.happymessage.common.ui.view.HeaderToolbar
         android:id="@+id/headerToolbar"
         android:layout_width="match_parent"
-        android:layout_height="42dp" />
+        android:layout_height="42dp"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
-        android:id="@+id/llEmpty"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBlackList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@+id/headerToolbar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBlackList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEmpty"
+        android:layout_width="168dp"
+        android:layout_height="192dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/black_list_empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tvEmpty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivEmpty"
-            android:layout_width="195dp"
-            android:layout_height="232dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="159dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/black_list_empty"
-            android:visibility="gone" />
-    </FrameLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/black_list_all_empty"
+        android:textColor="@color/FF171C21"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivEmpty" />
+</androidx.constraintlayout.widget.ConstraintLayout>
