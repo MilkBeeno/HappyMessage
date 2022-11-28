@@ -1,37 +1,17 @@
 # HappyMessage
 
 #### 介绍
-HappyMessage 社交马甲包
 
-#### 软件架构
-软件架构说明
+社交项目 HappyMessage
 
+#### 项目地址
 
-#### 安装教程
+[项目结构原型地址 v1.0.0](https://bdsmtw.axshare.com/#id=lqpl05&p=%E8%84%91%E5%9B%BE&g=1)
+[项目结构原型地址 v1.2.0](https://bdsmtw.axshare.com/#id=lqpl05&p=%E8%84%91%E5%9B%BE&g=1)
+[蓝湖项目地址](https://lanhuapp.com/web/#/item/project/stage?pid=5a07feaf-c3b5-4dbc-8002-9a462cfd1e6b&image_id=41d3561f-ec4e-4570-9572-7f050c0b859b&tid=e02d611e-58da-40f2-9a40-18eb5fe104a5)
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 首页展示图
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+[启动页面图](https://e.gitee.com/mobplus/projects/469614/repos/mobplus/HappyMessage/tree/master/app/project_image/img.png)
+[主页面展示图](https://e.gitee.com/mobplus/projects/469614/repos/mobplus/HappyMessage/tree/master/app/project_image/img_1.png)
+[登录注册图](https://e.gitee.com/mobplus/projects/469614/repos/mobplus/HappyMessage/tree/master/app/project_image/img_2.png)
