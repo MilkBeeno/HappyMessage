@@ -147,4 +147,5 @@
     <string name="dialog_conversation_delete_title">All records are cleared after deletion</string>
     <string name="dialog_conversation_delete_confirm">CONFIRM DELETION</string>
     <string name="black_list_all_empty">All empty</string>
+    <string name="about_us_user_bottom">Copyright © 2022 Apple Inc. All rights reserved</string>
 </resources>

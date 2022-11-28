@@ -64,7 +64,7 @@ object NotificationUtil {
             .setContentTitle(title)
             .setContentText(content)
             .setContentIntent(pendingIntent)
-            .setSmallIcon(R.drawable.login_logo)
+            .setSmallIcon(R.drawable.common_app_logo)
             .setLargeIcon(avatar)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
