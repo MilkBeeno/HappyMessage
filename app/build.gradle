@@ -8,8 +8,8 @@ plugins {
 android {
     compileSdk 32
     defaultConfig {
-        // 正式包名: com.milk.simplehappymessage  测试包名:com.milk.happymessage
-        applicationId "com.milk.happymessage"
+        // 正式包名: com.milk.happymessage  测试包名:com.milk.simplehappymessage
+        applicationId "com.milk.simplehappymessage"
         minSdk 21
         targetSdk 32
         versionCode 100

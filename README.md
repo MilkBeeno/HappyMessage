@@ -3,8 +3,8 @@
 #### 介绍
 
 社交项目 : HappyMessage <br>
-正式包名 : com.milk.simplehappymessage <br>
-测试包名 : com.milk.happymessage <br>
+正式包名 : com.milk.happymessage <br>
+测试包名 : com.milk.simplehappymessage <br>
 
 #### 项目地址
 
