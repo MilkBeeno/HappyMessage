@@ -128,6 +128,7 @@
     <string name="user_info_media_locked_view">View Now</string>
     <string name="user_info_please_view_video_or_image">Please watch the picture first.</string>
     <string name="user_info_view_ad">Rewarded video coming soon</string>
+    <string name="user_info_next">Next</string>
     <!--充值页面翻译-->
     <string name="recharge_title">Subscription</string>
     <string name="recharge_week">1 Week</string>
@@ -150,4 +151,5 @@
     <string name="dialog_conversation_delete_confirm">CONFIRM DELETION</string>
     <string name="black_list_all_empty">All empty</string>
     <string name="about_us_user_bottom">Copyright © 2022 Apple Inc. All rights reserved</string>
+
 </resources>

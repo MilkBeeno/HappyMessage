@@ -4,6 +4,7 @@
     <style name="circleStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+        <item name="borderRound">2dp</item>
     </style>
 
     <style name="roundCornerStyle_10">
