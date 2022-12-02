@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_10">#1AFFFFFF</color>
     <color name="white_60">#99FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
     <color name="white_90">#E6FFFFFF</color>
     <color name="black_80">#CC000000</color>
     <color name="black_70">#B3000000</color>
@@ -26,7 +27,8 @@
     <color name="FFECEDED">#FFECEDED</color>
     <color name="FFC2FFE8">#FFC2FFE8</color>
     <color name="FFF8FFE3">#FFF8FFE3</color>
-    <color name="FF39FFB2">#FF39FFB2 </color>
+    <color name="FF39FFB2">#FF39FFB2</color>
+    <color name="FFF1F483">#FFF1F483</color>
 
     <color name="white_30">#B3FFFFFF</color>
     <color name="black">#FF000000</color>

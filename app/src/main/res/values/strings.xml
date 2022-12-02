@@ -111,7 +111,7 @@
     <string name="edit_profile_success">Profile update successful.</string>
     <!--个人粉丝页面翻译-->
     <string name="fans_list_empty">No fans yet</string>
-    <string name="fans_list_to_publish">to publish content</string>
+    <string name="fans_list_to_publish">TO PUBLISH CONTENT</string>
     <!--个人关注页面翻译-->
     <string name="follows_list_empty">Users who have not yet followed</string>
     <string name="follows_list_to_attention">to pay attention</string>
@@ -129,7 +129,7 @@
     <string name="user_info_please_view_video_or_image">Please watch the picture first.</string>
     <string name="user_info_view_ad">Rewarded video coming soon</string>
     <!--充值页面翻译-->
-    <string name="recharge_title">subscription</string>
+    <string name="recharge_title">Subscription</string>
     <string name="recharge_week">1 Week</string>
     <string name="recharge_year">1 Year</string>
     <string name="recharge_week_desc">Cancel at any time</string>

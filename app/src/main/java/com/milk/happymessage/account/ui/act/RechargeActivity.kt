@@ -45,8 +45,8 @@ class RechargeActivity : AbstractActivity() {
         FireBaseManager.logEvent(FirebaseKey.SUBSCRIPTIONS_PAGE_SHOW)
         immersiveStatusBar()
         binding.headerToolbar.statusBarPadding()
-        binding.headerToolbar.setTitle(string(R.string.recharge_title), color(R.color.white))
-        binding.headerToolbar.showArrowBack(R.drawable.common_arrow_back_white)
+        binding.headerToolbar.setTitle(string(R.string.recharge_title), color(R.color.FF171C21))
+        binding.headerToolbar.showArrowBack(R.drawable.common_arrow_back)
         binding.llWeek.setOnClickListener(this)
         binding.clYear.setOnClickListener(this)
     }
@@ -88,8 +88,8 @@ class RechargeActivity : AbstractActivity() {
                 if (it) rechargeSuccessDialog.show()
                 if (it && AdConfig.adCancelType == 2 && adView?.parent != null) {
                     binding.root.removeView(adView)
-                } else initializeAdView()
-            } else initializeAdView()
+                } // else initializeAdView() 取消广告展示当前UI
+            } // else initializeAdView() 取消广告展示当前UI
             rechargePageInitialized = true
         }
     }
@@ -144,18 +144,14 @@ class RechargeActivity : AbstractActivity() {
     private fun updateUI(clickView: View?) {
         if (clickView == binding.llWeek) {
             binding.llWeek.setBackgroundResource(R.drawable.shape_recharge_options_background_select)
-            binding.ivWeek.setImageResource(R.drawable.recharge_options_select)
             binding.tvFree.text = string(R.string.recharge_week_desc)
         } else {
             binding.llWeek.setBackgroundResource(R.drawable.shape_recharge_options_background)
-            binding.ivWeek.setImageResource(R.drawable.recharge_options)
         }
         if (clickView == binding.clYear) {
-            binding.ivYear.setImageResource(R.drawable.recharge_options_select)
             binding.clYear.setBackgroundResource(R.drawable.shape_recharge_options_background_select)
             binding.tvFree.text = string(R.string.recharge_year_desc)
         } else {
-            binding.ivYear.setImageResource(R.drawable.recharge_options)
             binding.clYear.setBackgroundResource(R.drawable.shape_recharge_options_background)
         }
     }
