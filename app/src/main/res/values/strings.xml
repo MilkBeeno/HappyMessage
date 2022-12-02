@@ -122,7 +122,6 @@
     <string name="user_info_not_link">Social platform homepage link has not been uploaded yet ~</string>
     <string name="user_info_obtain_failed">Failed to get user information.</string>
     <string name="user_info_unlock_times">Free Times</string>
-    <string name="user_info_contact_details">How to contact me :</string>
     <string name="user_info_copy_success">Contact details copy successful.</string>
     <string name="user_info_media_locked">Information is locked</string>
     <string name="user_info_media_locked_view">View Now</string>
@@ -151,5 +150,7 @@
     <string name="dialog_conversation_delete_confirm">CONFIRM DELETION</string>
     <string name="black_list_all_empty">All empty</string>
     <string name="about_us_user_bottom">Copyright © 2022 Apple Inc. All rights reserved</string>
+    <string name="user_info_link">Contact information</string>
+    <string name="user_info_video_locked_desc">Information is locked</string>
 
 </resources>

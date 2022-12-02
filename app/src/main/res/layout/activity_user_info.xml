@@ -43,204 +43,24 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/flHeaderToolbar"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:visibility="visible">
 
-        <FrameLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <!-- 内容上半部分圆角背景 -->
+            <View
+                android:id="@+id/vBackground"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginTop="48dp"
                 android:background="@drawable/shape_common_radius_29_white_top"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="42dp"
-                    android:gravity="center_vertical">
-                    <!-- 用户昵称 -->
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvUserName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:includeFontPadding="false"
-                        android:textColor="@color/FF1E1E21"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:text="Gourmand" />
-
-                    <androidx.legacy.widget.Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                    <!-- 是否关注用户 -->
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:id="@+id/llFollow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="29dp"
-                        android:layout_marginEnd="12dp"
-                        android:animateLayoutChanges="true"
-                        android:gravity="center_vertical"
-                        android:visibility="gone"
-                        tools:background="@drawable/shape_user_info_un_follow"
-                        tools:visibility="visible">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/ivFollow"
-                            android:layout_width="29dp"
-                            android:layout_height="29dp"
-                            android:scaleType="centerCrop"
-                            tools:layout_marginStart="12dp"
-                            tools:src="@drawable/user_info_un_follow" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvFollow"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginEnd="14dp"
-                            android:text="@string/common_follow"
-                            android:textColor="@color/FF242B33"
-                            android:textSize="14sp"
-                            android:visibility="gone"
-                            tools:visibility="visible" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvUserId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/FF898C99"
-                    android:textSize="11sp"
-                    tools:text="ID : 2356465456" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvUserBio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginEnd="14dp"
-                    android:includeFontPadding="false"
-                    android:textColor="@color/FF5B5D66"
-                    android:textSize="13sp"
-                    tools:text="@string/user_info_not_bio" />
-
-                <include
-                    android:id="@+id/link"
-                    layout="@layout/layout_user_info_link"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="14dp"
-                    android:minHeight="56dp" />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/llMedia"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="22dp"
-                    android:background="@drawable/shape_user_info_bottom"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-
-                    <TextView
-                        android:id="@+id/tvVideo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="14dp"
-                        android:layout_marginEnd="14dp"
-                        android:text="@string/common_video"
-                        android:textColor="@color/FF1E1E21"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:visibility="gone"
-                        tools:visibility="visible" />
-
-                    <FrameLayout
-                        android:id="@+id/flVideo"
-                        android:layout_width="match_parent"
-                        android:layout_height="186dp"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="11dp"
-                        android:layout_marginEnd="14dp"
-                        android:visibility="gone"
-                        tools:visibility="visible">
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/ivVideo"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:shapeAppearanceOverlay="@style/roundCornerStyle_10" />
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="51dp"
-                            android:layout_height="51dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/common_video_media_medium" />
-                    </FrameLayout>
-
-                    <TextView
-                        android:id="@+id/tvImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginTop="19dp"
-                        android:layout_marginEnd="14dp"
-                        android:text="@string/common_picture"
-                        android:textColor="@color/FF1E1E21"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:visibility="gone"
-                        tools:visibility="visible" />
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rvImage"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginEnd="4dp"
-                            android:overScrollMode="never"
-                            android:visibility="gone"
-                            tools:visibility="visible" />
-
-                        <com.milk.happymessage.user.ui.view.MediaLockedLayout
-                            android:id="@+id/mlImage"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:visibility="gone" />
-                    </FrameLayout>
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/ivMediaEmpty"
-                        android:layout_width="204dp"
-                        android:layout_height="228dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="24dp"
-                        android:src="@drawable/user_info_media_empty"
-                        android:visibility="gone" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!-- 用户头像 -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivUserAvatar"
                 android:layout_width="77dp"
@@ -248,11 +68,563 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/circleStyle"
                 app:strokeColor="@color/white"
                 app:strokeWidth="2dp"
                 tools:src="@drawable/common_default_avatar_man" />
-        </FrameLayout>
+            <!-- 用户昵称 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/FF1E1E21"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"
+                tools:text="Gourmand" />
+            <!-- 是否关注用户 -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llFollow"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_marginEnd="12dp"
+                android:animateLayoutChanges="true"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tvUserName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvUserName"
+                tools:background="@drawable/shape_user_info_un_follow"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFollow"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:scaleType="centerCrop"
+                    tools:layout_marginStart="12dp"
+                    tools:src="@drawable/user_info_un_follow" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="14dp"
+                    android:text="@string/common_follow"
+                    android:textColor="@color/FF242B33"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- 用户 ID -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_common_radius_5_grey"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/FF6B8299"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+                tools:text="ID : 2356465456" />
+            <!-- 用户 BIO -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:textColor="@color/FF475766"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserId"
+                tools:text="@string/user_info_not_bio" />
+            <!-- 用户联系方式 Title -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llUserLinkTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/tvUserBio">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/user_info_link"
+                    android:textColor="@color/FF171C21"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivUserLinkTitle"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_info_locked" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- 用户联系方式 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clUserLink"
+                android:layout_width="match_parent"
+                android:layout_height="77dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/shape_user_info_link"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/llUserLinkTitle">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivUserLinkTag"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginStart="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_info_link_tag"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxWidth="195dp"
+                    android:maxLines="3"
+                    android:textColor="@color/FFF23081"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivUserLinkTag"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="https://www.facebook.com/" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llCopy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/shape_common_radius_8_pink"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_info_link_copy" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:text="@string/user_info_copy"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNotLink"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@string/user_info_not_link"
+                    android:textColor="@color/FF898C99"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivUserLinkTag"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- 用户联系方式遮罩 -->
+            <FrameLayout
+                android:id="@+id/flLinkLocked"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/user_info_link_locked_background"
+                app:layout_constraintBottom_toBottomOf="@+id/clUserLink">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clViewLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/shape_common_radius_8_pink"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLinkType"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvLinkViewNow"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/user_info_media_locked_view_ad" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLinkViewNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="14dp"
+                        android:includeFontPadding="false"
+                        android:text="@string/user_info_media_locked_view"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/tvLinkTimes"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivLinkType"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLinkTimes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/white_90"
+                        android:textSize="9sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvLinkViewNow"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLinkViewNow"
+                        tools:ignore="SmallSp"
+                        tools:text="(Free Times 1/3)" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+            <!-- 用户视频 Title -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llUserVideoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/clUserLink">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/common_video"
+                    android:textColor="@color/FF171C21"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivUserVideoTitle"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_info_locked" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- 用户视频 -->
+            <FrameLayout
+                android:id="@+id/flVideo"
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/llUserVideoTitle">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:shapeAppearanceOverlay="@style/roundCornerStyle_10" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/common_video_media_medium" />
+            </FrameLayout>
+            <!-- 用户视频遮罩 -->
+            <FrameLayout
+                android:id="@+id/flVideoLocked"
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/user_info_video_locked_background"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/flVideo"
+                app:layout_constraintEnd_toEndOf="@+id/flVideo"
+                app:layout_constraintStart_toStartOf="@+id/flVideo"
+                app:layout_constraintTop_toTopOf="@+id/flVideo">
+
+                <View
+                    android:id="@+id/vVideoBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/shape_user_info_bottom" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginBottom="17dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/user_info_video_locked_desc"
+                    android:textColor="@color/FFFFB2D0"
+                    android:textSize="14sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clViewVideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_common_radius_8_pink"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivVideoType"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvVideoViewNow"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/user_info_media_locked_view_ad" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVideoViewNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="14dp"
+                        android:includeFontPadding="false"
+                        android:text="@string/user_info_media_locked_view"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/tvVideoTimes"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivVideoType"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVideoTimes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/white_90"
+                        android:textSize="9sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvVideoViewNow"
+                        app:layout_constraintTop_toBottomOf="@+id/tvVideoViewNow"
+                        tools:ignore="SmallSp"
+                        tools:text="(Free Times 1/3)" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+            <!-- 用户照片 Title -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llUserPhotoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/flVideoLocked"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/common_picture"
+                    android:textColor="@color/FF171C21"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivUserPhotoTitle"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_info_locked" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <!-- 用户照片 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:overScrollMode="never"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/llUserPhotoTitle"
+                tools:visibility="visible" />
+            <!-- 用户照片遮罩 -->
+            <FrameLayout
+                android:id="@+id/flPhotoLocked"
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/user_info_video_locked_background"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/rvImage"
+                app:layout_constraintEnd_toEndOf="@+id/rvImage"
+                app:layout_constraintStart_toStartOf="@+id/rvImage"
+                app:layout_constraintTop_toTopOf="@+id/rvImage"
+                tools:visibility="visible">
+
+                <View
+                    android:id="@+id/vPhotoBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/shape_user_info_bottom" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginBottom="17dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/user_info_video_locked_desc"
+                    android:textColor="@color/FFFFB2D0"
+                    android:textSize="14sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clViewPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/shape_common_radius_8_pink"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPhotoType"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginStart="10dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPhotoViewNow"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/user_info_media_locked_view_ad" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPhotoViewNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="14dp"
+                        android:includeFontPadding="false"
+                        android:text="@string/user_info_media_locked_view"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/tvPhotoTimes"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivPhotoType"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPhotoTimes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/white_90"
+                        android:textSize="9sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvPhotoViewNow"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPhotoViewNow"
+                        tools:ignore="SmallSp"
+                        tools:text="(Free Times 1/3)" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+            <!-- 底部预留空间 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                app:layout_constraintTop_toBottomOf="@+id/rvImage" />
+            <!-- 空试图展示 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMediaEmpty"
+                android:layout_width="206dp"
+                android:layout_height="197dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/user_info_media_empty"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/vBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/vBackground" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
     <!-- 底部点击查看下一个人 -->
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -318,6 +690,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_fileName="loading.json"
-        app:lottie_repeatCount="-1"
-        tools:visibility="visible" />
+        app:lottie_repeatCount="-1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
