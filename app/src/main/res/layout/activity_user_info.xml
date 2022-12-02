@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/common_background"
     tools:context=".user.ui.act.UserInfoActivity">
     <!-- 顶部背景图片 -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -82,13 +81,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
+                android:ellipsize="end"
                 android:includeFontPadding="false"
+                android:lines="1"
+                android:maxWidth="230dp"
                 android:textColor="@color/FF1E1E21"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"
-                tools:text="Gourmand" />
+                tools:text="GourmandGourmandGourmandGourmand" />
             <!-- 是否关注用户 -->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llFollow"
@@ -167,9 +169,7 @@
                     android:text="@string/user_info_link"
                     android:textColor="@color/FF171C21"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivUserLinkTitle"
@@ -187,7 +187,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"
-                android:background="@drawable/shape_user_info_link"
+                android:background="@drawable/shape_common_radius_10_light_pink"
                 android:gravity="center_vertical"
                 app:layout_constraintTop_toBottomOf="@+id/llUserLinkTitle">
 
@@ -351,9 +351,7 @@
                     android:text="@string/common_video"
                     android:textColor="@color/FF171C21"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivUserVideoTitle"
@@ -406,7 +404,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/shape_user_info_bottom" />
+                    android:background="@drawable/shape_common_radius_10_light_pink" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -483,7 +481,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
                 android:gravity="center_vertical"
-                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@+id/flVideoLocked"
                 tools:visibility="visible">
 
@@ -494,9 +491,7 @@
                     android:text="@string/common_picture"
                     android:textColor="@color/FF171C21"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivUserPhotoTitle"
@@ -507,17 +502,23 @@
                     android:src="@drawable/user_info_locked" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <!-- 用户照片 -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvImage"
+            <FrameLayout
+                android:id="@+id/llImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"
-                android:overScrollMode="never"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/llUserPhotoTitle"
-                tools:visibility="visible" />
+                app:layout_constraintTop_toBottomOf="@+id/llUserPhotoTitle">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:visibility="invisible"
+                    tools:visibility="visible" />
+            </FrameLayout>
             <!-- 用户照片遮罩 -->
             <FrameLayout
                 android:id="@+id/flPhotoLocked"
@@ -526,19 +527,16 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:background="@drawable/user_info_video_locked_background"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/rvImage"
-                app:layout_constraintEnd_toEndOf="@+id/rvImage"
-                app:layout_constraintStart_toStartOf="@+id/rvImage"
-                app:layout_constraintTop_toTopOf="@+id/rvImage"
-                tools:visibility="visible">
+                app:layout_constraintEnd_toEndOf="@+id/llImage"
+                app:layout_constraintStart_toStartOf="@+id/llImage"
+                app:layout_constraintTop_toTopOf="@+id/llImage">
 
                 <View
                     android:id="@+id/vPhotoBottom"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/shape_user_info_bottom" />
+                    android:background="@drawable/shape_common_radius_10_light_pink" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"

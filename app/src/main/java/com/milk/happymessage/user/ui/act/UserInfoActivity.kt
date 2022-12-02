@@ -65,8 +65,10 @@ class UserInfoActivity : AbstractActivity() {
         binding.llFollow.setOnClickListener(this)
         binding.llCopy.setOnClickListener(this)
         binding.flVideo.setOnClickListener(this)
+        binding.flVideoLocked.setOnClickListener(this)
         binding.clViewLink.setOnClickListener(this)
         binding.clViewVideo.setOnClickListener(this)
+        binding.flPhotoLocked.setOnClickListener(this)
         binding.clViewPhoto.setOnClickListener(this)
         binding.tvMessage.setOnClickListener(this)
         binding.llNext.setOnClickListener(this)
@@ -81,6 +83,7 @@ class UserInfoActivity : AbstractActivity() {
             if (it) {
                 binding.lvLoading.gone()
                 binding.slContent.visible()
+                binding.llUserBottom.visible()
                 setUserAvatar()
                 setUserName()
                 setUserFollow()
@@ -192,7 +195,11 @@ class UserInfoActivity : AbstractActivity() {
     @SuppressLint("SetTextI18n")
     private fun setUserBio() {
         val userInfo = userInfoViewModel.getUserInfoModel()
-        binding.tvUserBio.text = userInfo.targetBio
+        if (userInfo.targetBio.isNotBlank()) {
+            binding.tvUserBio.text = userInfo.targetBio
+        } else {
+            binding.tvUserBio.text = string(R.string.user_info_not_bio)
+        }
     }
 
     private fun setUserLink() {
@@ -203,12 +210,12 @@ class UserInfoActivity : AbstractActivity() {
                 binding.tvContact.visible()
                 binding.llCopy.visible()
                 binding.tvNotLink.gone()
-                if (!Account.userSubscribe) {
-                    val adUnitId = AdConfig.getAdvertiseUnitId(AdCodeKey.VIEW_USER_LINK)
-                    if (adUnitId.isNotBlank() && !userInfo.linkUnlocked) {
-                        updateMediaFreeTimes(binding.ivLinkType, binding.tvLinkTimes)
-                        binding.flLinkLocked.visible()
-                    }
+                val adUnitId = AdConfig.getAdvertiseUnitId(AdCodeKey.VIEW_USER_LINK)
+                if (!Account.userSubscribe && adUnitId.isNotBlank() && !userInfo.linkUnlocked) {
+                    updateMediaFreeTimes(binding.ivLinkType, binding.tvLinkTimes)
+                } else {
+                    binding.ivUserLinkTitle.gone()
+                    binding.flLinkLocked.gone()
                 }
             }
             else -> {
@@ -239,13 +246,14 @@ class UserInfoActivity : AbstractActivity() {
         val userImageList = userInfo.imageListConvert()
         when {
             userImageList.isNotEmpty() -> {
-                binding.llUserPhotoTitle.visible()
-                binding.rvImage.visible()
-                if (!Account.userSubscribe) {
-                    val adUnitId = AdConfig.getAdvertiseUnitId(AdCodeKey.VIEW_USER_IMAGE)
-                    if (adUnitId.isNotBlank() && !userInfo.imageUnlocked) {
-                        updateMediaFreeTimes(binding.ivPhotoType, binding.tvPhotoTimes)
-                    }
+                val adUnitId = AdConfig.getAdvertiseUnitId(AdCodeKey.VIEW_USER_IMAGE)
+                if (!Account.userSubscribe && adUnitId.isNotBlank() && !userInfo.imageUnlocked) {
+                    binding.rvImage.visibility = View.GONE
+                    updateMediaFreeTimes(binding.ivPhotoType, binding.tvPhotoTimes)
+                } else {
+                    binding.ivUserPhotoTitle.visible()
+                    binding.flPhotoLocked.visible()
+                    binding.rvImage.visible()
                 }
                 binding.rvImage.layoutManager = NoScrollGridLayoutManager(this, 2)
                 binding.rvImage.addItemDecoration(SimpleGridDecoration(this))
@@ -312,6 +320,7 @@ class UserInfoActivity : AbstractActivity() {
                         // 点击直接查看
                         if (userInfo.unlockMethod == 1) {
                             FireBaseManager.logEvent(FirebaseKey.CLICK_FREE_UNLOCK_CONTACT)
+                            binding.ivUserLinkTitle.gone()
                             binding.flLinkLocked.gone()
                             userInfoViewModel.changeUnlockStatus(
                                 DeviceManager.number,
@@ -367,6 +376,7 @@ class UserInfoActivity : AbstractActivity() {
             failure = { loadingDialog.dismiss() },
             success = {
                 loadingDialog.dismiss()
+                binding.ivUserLinkTitle.gone()
                 binding.flLinkLocked.gone()
                 userInfoViewModel.changeUnlockStatus(
                     DeviceManager.number,
@@ -386,7 +396,9 @@ class UserInfoActivity : AbstractActivity() {
             }
             userInfo.unlockMethod == 1 -> {
                 FireBaseManager.logEvent(FirebaseKey.CLICK_UNLOCK_PHOTO_ALBUM_FOR_FREE)
+                binding.ivUserPhotoTitle.gone()
                 binding.flPhotoLocked.gone()
+                binding.rvImage.visible()
                 userInfoViewModel.changeUnlockStatus(
                     DeviceManager.number,
                     UnlockType.Image.value,
@@ -400,7 +412,9 @@ class UserInfoActivity : AbstractActivity() {
                     activity = this,
                     failure = { loadingDialog.dismiss() },
                     success = {
+                        binding.ivUserPhotoTitle.gone()
                         binding.flPhotoLocked.gone()
+                        binding.rvImage.gone()
                         userInfoViewModel.changeUnlockStatus(
                             DeviceManager.number,
                             UnlockType.Image.value,
