@@ -25,9 +25,10 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivUserAvatar"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
         android:layout_marginTop="71dp"
+        android:padding="2dp"
         android:scaleType="centerCrop"
         android:src="@drawable/common_default_avatar_man"
         app:layout_constraintEnd_toEndOf="parent"
