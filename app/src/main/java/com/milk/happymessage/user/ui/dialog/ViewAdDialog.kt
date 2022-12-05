@@ -14,7 +14,7 @@ class ViewAdDialog(activity: FragmentActivity) : SimpleDialog<DialogViewAdBindin
         setGravity(Gravity.CENTER)
         setWidthMatchParent(true)
         setCanceledOnTouchOutside(true)
-        binding.tvCancel.setOnClickListener {
+        binding.ivClose.setOnClickListener {
             FireBaseManager
                 .logEvent(FirebaseKey.CLICK_CANCEL_SHOW_CONTACT_DOUBLE_CHECK)
             dismiss()
