@@ -7,10 +7,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.View.OnScrollChangeListener
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
+import androidx.core.widget.NestedScrollView
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.milk.happymessage.R
 import com.milk.happymessage.account.Account
@@ -38,6 +40,8 @@ import com.milk.happymessage.user.ui.dialog.ViewAdDialog
 import com.milk.happymessage.user.ui.dialog.ViewLinkDialog
 import com.milk.happymessage.user.ui.vm.UserInfoViewModel
 import com.milk.simple.ktx.*
+import com.milk.simple.log.Logger
+import kotlin.math.abs
 
 class UserInfoActivity : AbstractActivity() {
     private val binding by lazy { ActivityUserInfoBinding.inflate(layoutInflater) }
@@ -47,6 +51,9 @@ class UserInfoActivity : AbstractActivity() {
     private val viewAdDialog by lazy { ViewAdDialog(this) }
     private val viewLinkDialog by lazy { ViewLinkDialog(this) }
     private val reportDialog by lazy { ReportDialog(this) }
+
+    /** 值是正代表下拉 ，是负值代表上滑 */
+    private var slidingDistance: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +83,41 @@ class UserInfoActivity : AbstractActivity() {
             loadingDialog.show()
             userInfoViewModel.report(userId, it)
         }
+        binding.slContent.setOnScrollChangeListener(object : OnScrollChangeListener {
+            override fun onScrollChange(
+                v: View,
+                scrollX: Int,
+                scrollY: Int,
+                oldScrollX: Int,
+                oldScrollY: Int
+            ) {
+                Logger.d("滑动距离开始=$scrollY,滑动距离旧值=$oldScrollY", "hlc")
+                val current = v as NestedScrollView
+                if (scrollY > oldScrollY) {
+                    if (slidingDistance > 0) slidingDistance = 0
+                    if (scrollY - oldScrollY > 30) {
+                        binding.vHeaderToolbarColor.alpha = 1f
+                    } else {
+                        slidingDistance -= scrollY - oldScrollY
+                        binding.vHeaderToolbarColor.alpha = abs(slidingDistance) / 40f * 1f
+                    }
+                } else {
+                    if (slidingDistance < 0) slidingDistance = 0
+                    if (oldScrollY - scrollY > 30) {
+                        binding.vHeaderToolbarColor.alpha = 0f
+                    } else {
+                        slidingDistance += oldScrollY - scrollY
+                        binding.vHeaderToolbarColor.alpha = 1f - abs(slidingDistance) / 40f * 1f
+                    }
+                }
+                when (scrollY) {
+                    0 -> binding.vHeaderToolbarColor.alpha = 0f
+                    current.getChildAt(0).measuredHeight - current.measuredHeight -> {
+                        binding.vHeaderToolbarColor.alpha = 1f
+                    }
+                }
+            }
+        })
     }
 
     private fun initializeObserver() {
