@@ -6,10 +6,10 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import androidx.fragment.app.FragmentActivity
 import com.milk.happymessage.common.ui.dialog.SimpleDialog
-import com.milk.happymessage.databinding.DialogRechargeSuccessBinding
+import com.milk.happymessage.databinding.DialogRechargeSuccessfulBinding
 
 class RechargeSuccessDialog(activity: FragmentActivity) :
-    SimpleDialog<DialogRechargeSuccessBinding>(activity) {
+    SimpleDialog<DialogRechargeSuccessfulBinding>(activity) {
     private val handler = Handler(Looper.myLooper() ?: Looper.getMainLooper())
 
     init {
@@ -19,7 +19,7 @@ class RechargeSuccessDialog(activity: FragmentActivity) :
         handler.postDelayed({ dismiss() }, 1500)
     }
 
-    override fun getViewBinding(): DialogRechargeSuccessBinding {
-        return DialogRechargeSuccessBinding.inflate(LayoutInflater.from(activity))
+    override fun getViewBinding(): DialogRechargeSuccessfulBinding {
+        return DialogRechargeSuccessfulBinding.inflate(LayoutInflater.from(activity))
     }
 }
