@@ -57,26 +57,27 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llMessage"
         android:layout_width="wrap_content"
-        android:layout_height="44dp"
+        android:layout_height="43dp"
         android:layout_marginBottom="56dp"
-        android:background="@drawable/shape_common_next_background"
+        android:background="@drawable/shape_common_button_style_4"
         android:gravity="center_vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="29dp"
-            android:layout_height="29dp"
-            android:layout_marginStart="52dp"
-            android:src="@drawable/user_info_message" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
+            android:src="@drawable/common_smile" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
-            android:layout_marginEnd="52dp"
+            android:layout_marginEnd="28dp"
             android:text="@string/user_info_message"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>
