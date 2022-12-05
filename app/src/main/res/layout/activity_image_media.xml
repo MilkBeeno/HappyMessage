@@ -65,7 +65,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="28dp"
-            android:src="@drawable/user_info_message" />
+            android:src="@drawable/common_smile" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvMessage"

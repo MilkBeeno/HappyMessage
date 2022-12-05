@@ -134,12 +134,20 @@ class EditProfileActivity : AbstractActivity() {
 
     private fun initializeView() {
         immersiveStatusBar()
-        binding.headerToolbar.statusBarPadding()
+        binding.flHeaderToolbar.statusBarPadding()
         binding.root.navigationBarPadding()
         binding.headerToolbar.showArrowBack()
         binding.headerToolbar.setTitle(string(R.string.edit_profile_title))
+        // 名字字数限制
         binding.etName.filters =
             arrayOf(InputFilter.LengthFilter(20), BanEnterInputFilter())
+        val nameLength = binding.etAboutMe.text?.length ?: 0
+        binding.tvNameNumber.text = nameLength.toString().plus("/20")
+        binding.etName.addTextChangedListener {
+            val changeLength = it?.length ?: 0
+            binding.tvNameNumber.text = changeLength.toString().plus("/20")
+        }
+        // 关于我字数限制
         binding.etAboutMe.filters =
             arrayOf(InputFilter.LengthFilter(150), BanEnterInputFilter())
         val currentLength = binding.etAboutMe.text?.length ?: 0

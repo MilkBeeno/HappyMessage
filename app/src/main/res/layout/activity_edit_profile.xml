@@ -4,24 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/FFF5F5F5"
     android:orientation="vertical"
     tools:context=".account.ui.act.EditProfileActivity">
 
-    <com.milk.happymessage.common.ui.view.HeaderToolbar
-        android:id="@+id/headerToolbar"
+    <FrameLayout
+        android:id="@+id/flHeaderToolbar"
         android:layout_width="match_parent"
-        android:layout_height="42dp" />
+        android:layout_height="42dp">
+
+        <com.milk.happymessage.common.ui.view.HeaderToolbar
+            android:id="@+id/headerToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:text="@string/edit_profile_save"
+            android:textColor="@color/FFF23081"
+            android:textSize="14sp" />
+    </FrameLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="14dp"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -47,171 +63,197 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="@string/edit_profile_avatar"
-                android:textColor="@color/FF2E2F33"
+                android:textColor="@color/FFFF80B5"
                 android:textSize="13sp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="19dp"
-                android:text="@string/edit_profile_name"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:background="@drawable/shape_common_radius_29_white_top"
+                android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/etName"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_edit_profile_input_background"
-                android:hint="@string/edit_profile_name_hint"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:textColor="@color/FF2E2F33"
-                android:textColorHint="@color/FFB7BACC"
-                android:textSize="14sp" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
-                android:text="@string/edit_profile_about_me"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="22dp"
+                        android:text="@string/edit_profile_name"
+                        android:textColor="@color/FF6B8299"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_edit_profile_input_background"
-                android:minHeight="106dp">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNameNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="22dp"
+                        android:textColor="@color/FFA3B8CC"
+                        android:textSize="12sp"
+                        tools:text="0/20" />
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/shape_edit_profile_input_background"
+                    android:gravity="start"
+                    android:hint="@string/edit_profile_name_hint"
+                    android:padding="12dp"
+                    android:textColor="@color/FF171C21"
+                    android:textColorHint="@color/FFA3B8CC"
+                    android:textSize="14sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="22dp"
+                        android:text="@string/edit_profile_about_me"
+                        android:textColor="@color/FF6B8299"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="22dp"
+                        android:textColor="@color/FFA3B8CC"
+                        android:textSize="12sp"
+                        tools:text="0/150" />
+                </FrameLayout>
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etAboutMe"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp"
-                    android:background="@null"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/shape_edit_profile_input_background"
                     android:gravity="start"
                     android:hint="@string/edit_profile_about_me_hint"
-                    android:padding="14dp"
-                    android:textColor="@color/FF2E2F33"
-                    android:textColorHint="@color/FFB7BACC"
+                    android:minHeight="106dp"
+                    android:padding="12dp"
+                    android:textColor="@color/FF171C21"
+                    android:textColorHint="@color/FFA3B8CC"
                     android:textSize="14sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:layout_marginEnd="14dp"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/FFB7BACC"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:text="@string/edit_profile_about_link"
+                    android:textColor="@color/FF6B8299"
                     android:textSize="12sp"
-                    tools:text="0/150" />
-            </FrameLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
-                android:text="@string/edit_profile_about_link"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape_edit_profile_input_background"
-                android:minHeight="72dp">
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/etLink"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@null"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/shape_edit_profile_input_background"
                     android:gravity="start"
                     android:hint="@string/edit_profile_link_hint"
-                    android:padding="14dp"
-                    android:textColor="@color/FF2E2F33"
-                    android:textColorHint="@color/FFB7BACC"
+                    android:minHeight="86dp"
+                    android:padding="12dp"
+                    android:textColor="@color/FF171C21"
+                    android:textColorHint="@color/FFA3B8CC"
                     android:textSize="14sp" />
-            </FrameLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
-                android:text="@string/common_video"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:text="@string/common_video"
+                    android:textColor="@color/FF6B8299"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
-            <FrameLayout
-                android:id="@+id/flVideo"
-                android:layout_width="106dp"
-                android:layout_height="106dp"
-                android:layout_gravity="start"
-                android:layout_marginTop="10dp">
+                <FrameLayout
+                    android:id="@+id/flVideo"
+                    android:layout_width="106dp"
+                    android:layout_height="106dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:visibility="gone">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivVideo"
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/roundCornerStyle_10"
+                        tools:src="@drawable/common_media_add" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivVideoMask"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/common_video_media"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:text="@string/common_picture"
+                    android:textColor="@color/FF6B8299"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPicture"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/roundCornerStyle_10"
-                    tools:src="@drawable/common_media_add" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:overScrollMode="never"
+                    android:paddingBottom="10dp" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivVideoMask"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/common_video_media"
-                    android:visibility="gone"
-                    tools:visibility="visible" />
-
-            </FrameLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
-                android:text="@string/common_picture"
-                android:textColor="@color/FF1E1E21"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPicture"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:overScrollMode="never"
-                android:paddingBottom="10dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvSave"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/shape_common_next_background"
-        android:gravity="center"
-        android:text="@string/edit_profile_save"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
 </androidx.appcompat.widget.LinearLayoutCompat>
