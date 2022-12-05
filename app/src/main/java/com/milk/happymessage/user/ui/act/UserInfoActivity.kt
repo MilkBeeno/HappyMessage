@@ -250,9 +250,11 @@ class UserInfoActivity : AbstractActivity() {
                 }
             }
             else -> {
+                binding.ivUserLinkTitle.gone()
                 binding.tvContact.gone()
                 binding.llCopy.gone()
                 binding.tvNotLink.visible()
+                binding.flLinkLocked.gone()
             }
         }
     }
