@@ -44,7 +44,7 @@ class AboutUsActivity : AbstractActivity() {
                 WebActivity.create(
                     this,
                     WebType.UserAgreement.value,
-                    "https://justfuncall.com/terms.html"
+                    "https://res.happymessagechattingapp.com/terms-of-use.html"
                 )
             }
             binding.llUserPrivacy -> {
@@ -52,7 +52,7 @@ class AboutUsActivity : AbstractActivity() {
                 WebActivity.create(
                     this,
                     WebType.PrivacyService.value,
-                    "https://justfuncall.com/privacy.html"
+                    "https://res.happymessagechattingapp.com/privacy-policy.html"
                 )
             }
         }
